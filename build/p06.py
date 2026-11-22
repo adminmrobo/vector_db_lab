@@ -47,14 +47,14 @@ def body():
                '<div class="group"><span class="glabel">뜻 몫 α</span><input type="range" id="a_r" min="0" max="10" value="10" aria-label="알파"><span class="val" id="av_r"></span></div>'
                '<div class="group"><span class="glabel">근거 문턱</span><input type="range" id="t_r" min="10" max="80" step="5" value="35" aria-label="문턱"><span class="val" id="tv_r"></span></div>'
                '<div class="group"><button class="bt" id="n_r" aria-pressed="false">날짜 필터: 최신 판만</button></div>',
-               '<a href="../04_llm_rag.html#s3">4-3 쪼개기</a> · <a href="../04_llm_rag.html#s4">4-4 섞기</a> · <a href="../04_llm_rag.html#s5">4-5 오래된 문서</a>')
+               '<a href="../04_llm_rag.html#s3">4-3 쪼개기</a> · <a href="../04_llm_rag.html#s4">4-4 섞기</a> · <a href="../04_llm_rag.html#s5">4-5 오래된 문서</a> · <a href="../06_attention_3d.html#duel">6장 근거 개수</a>')
     b += scene('sns', '③ SNS 상황실 — 광고는 거르고, 새 이야기는 빨리',
                '14일 동안 SNS 글 %d개가 들어옵니다. 광고 문턱은 첫 주로 정해 둘째 주에 씁니다. 결제 오류 이야기를 빨리 알아채되, 괜한 알림은 줄이세요.' % R['n']['sns'],
                '<div class="group"><span class="glabel">관찰 날짜</span><input type="range" id="d_n" min="8" max="14" value="14" aria-label="날짜"><span class="val" id="dv_n"></span></div>',
                '<div class="group"><span class="glabel">광고 문턱 (좌표)</span><input type="range" id="p_n" min="50" max="99" value="60" aria-label="광고 문턱"><span class="val" id="pv_n"></span></div>'
                '<div class="group"><span class="glabel">같은 이야기로 볼 닮음</span><input type="range" id="g_n" min="40" max="98" value="90" aria-label="닮음 문턱"><span class="val" id="gv_n"></span></div>'
                '<div class="group"><span class="glabel">알림 기준 (새 묶음 글 수)</span><input type="range" id="a_n" min="2" max="8" value="2" aria-label="알림 기준"><span class="val" id="av_n"></span></div>',
-               '<a href="../01_why_not_table.html#s3">1-3 규칙의 한계</a> · <a href="../05_cases.html#s2">5-2 SNS 모니터링</a>')
+               '<a href="../01_why_not_table.html#s3">1-3 규칙의 한계</a> · <a href="../05_cases.html#s2">5-2 SNS 모니터링</a> · <a href="../07_graph_ontology.html#s1">7-1 문턱 정하기</a>')
     b += scene('store', '④ 창고 관리실 — 빠르고 빠짐없이',
                '리뷰 좌표가 계속 늘어 창고가 붐빕니다. 질문 60개를 기준으로, 진짜 가장 가까운 10개를 놓치지 않으면서(재현율) 비교 횟수를 줄이는 색인 설정을 찾으세요.',
                '<div class="group"><span class="glabel">창고의 점 수</span><button class="bt" data-n="2000" aria-pressed="false">2,000개</button><button class="bt" data-n="5000" aria-pressed="true">5,000개</button><button class="bt" data-n="8000" aria-pressed="false">8,000개</button></div>',
@@ -198,7 +198,7 @@ def build_page():
                  nav=nav, cover_html=cov, hero=hr,
                  body=body() + footer([('데이터', '이 연구실이 만든 가상 데이터'), ('배운 곳', '1~5장')],
                                       ['모든 숫자는 가상 데이터로 계산한 교육용 예시입니다. 실제 서비스 운영·투자 권고가 아닙니다.', 'RAG 답 쓰기는 흉내입니다.'],
-                                      prev=('05_cases.html', '5장 · 현장 사례'), nxt=('index.html', '목차로'), depth=1),
+                                      prev=('07_graph_ontology.html', '7장 · 좌표와 관계'), nxt=('index.html', '목차로'), depth=1),
                  gloss={'재현율': ['재현율', '찾아야 할 것 중 찾아온 비율.'], '정밀도': ['정밀도', '찾아온 것 중 맞은 비율.'], '문턱': ['문턱', '걸러내거나 알리는 기준값.']},
                  quizzes={}, page_js=JS, depth=1, og='og_06')
 

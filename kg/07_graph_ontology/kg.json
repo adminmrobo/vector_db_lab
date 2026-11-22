@@ -1,0 +1,606 @@
+{
+ "version": "1.0",
+ "page": "07_graph_ontology",
+ "nodes": [
+  {
+   "id": "lab:method/cosine-threshold",
+   "type": "Method",
+   "label": {
+    "ko": "코사인 점수 분포로 문턱 정하기",
+    "en": "Choosing cosine thresholds from score distributions"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "정답·오답 분포가 갈리는 곳"
+   }
+  },
+  {
+   "id": "lab:limitation/score-scale",
+   "type": "Limitation",
+   "label": {
+    "ko": "코사인 점수의 눈금은 모델·데이터마다 다르다",
+    "en": "Score scales differ by model"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:concept/knowledge-graph",
+   "type": "Concept",
+   "label": {
+    "ko": "지식 그래프 (주어, 관계, 목적어)",
+    "en": "Knowledge graph"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#s2",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "개체와 이름 붙은 관계"
+   },
+   "source": [
+    {
+     "ref": "hogan2021kg",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:method/graphrag",
+   "type": "Method",
+   "label": {
+    "ko": "GraphRAG — 좌표로 입구, 그래프로 여러 걸음",
+    "en": "GraphRAG"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#s3",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "edge2024graphrag",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:claim/graphrag-multihop",
+   "type": "Claim",
+   "label": {
+    "ko": "여러 걸음 질문 6개: 벡터만(조각 2개) 5개, GraphRAG(2걸음) 6개",
+    "en": "GraphRAG gathers multi-hop facts"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#duel",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "ahn2026vdb",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:concept/ontology",
+   "type": "Concept",
+   "label": {
+    "ko": "온톨로지 — 이름·다른 이름·계층·규칙",
+    "en": "Ontology"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#s4",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "w3c_skos",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:method/subclass-filter",
+   "type": "Method",
+   "label": {
+    "ko": "하위 개념 추론으로 검색 범위 정하기",
+    "en": "Subclass-expanded filtering"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:method/tool-by-question",
+   "type": "Method",
+   "label": {
+    "ko": "질문 모양별 도구 고르기 (표·좌표·그래프·온톨로지)",
+    "en": "Choosing tools by question shape"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#s5",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:sim/v7-graph3d",
+   "type": "Simulation",
+   "label": {
+    "ko": "지식 그래프 3D",
+    "en": "Knowledge graph 3D lab"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/ahn2026vdb",
+   "type": "Work",
+   "label": {
+    "ko": "안 (2026) (주)M-Robo",
+    "en": "벡터 DB 연구실 가상 데이터 (영화 리뷰·SNS 글·랩플릭스 안내 문서·교육용 임베딩)"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/edge2024graphrag",
+   "type": "Work",
+   "label": {
+    "ko": "Edge 외 (2024) arXiv:2404.16130",
+    "en": "From Local to Global: A Graph RAG Approach to Query-Focused Summarization"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/hogan2021kg",
+   "type": "Work",
+   "label": {
+    "ko": "Hogan 외 (2021) ACM Computing Surveys",
+    "en": "Knowledge Graphs"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/w3c_skos",
+   "type": "Work",
+   "label": {
+    "ko": "W3C (2009) W3C",
+    "en": "SKOS Simple Knowledge Organization System Reference"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-7-q71-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "다른 팀이 쓰는 \"코사인 0.7 이상\" 문턱을 그대로 가져오면 안 되는 이유는?",
+    "en": "Quiz 7 q71-1"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-7-q71-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "정답 중앙값 0.63, 오답 중앙값 0.30일 때 출발점 문턱 어림값은?",
+    "en": "Quiz 7 q71-2"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-7-q72-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "\"프리미엄 → 4K → 25메가비트\"를 잇는 것은?",
+    "en": "Quiz 7 q72-1"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-7-q72-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "지식 그래프의 사실 하나를 적는 기본 모양은?",
+    "en": "Quiz 7 q72-2"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-7-q73-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "GraphRAG에서 좌표(벡터 검색)의 역할은?",
+    "en": "Quiz 7 q73-1"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-7-q73-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "따라갈 걸음 수를 늘리면?",
+    "en": "Quiz 7 q73-2"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-7-q74-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "영화 표에 \"긴장감 장르\" 값이 없는데도 찾을 수 있게 해 주는 것은?",
+    "en": "Quiz 7 q74-1"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-7-q74-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "\"현행 환불 규정이 둘\"이라는 모순을 미리 잡는 것은?",
+    "en": "Quiz 7 q74-2"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-7-q75-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "\"이번 달 결제 건수는?\"에 가장 먼저 꺼낼 도구는?",
+    "en": "Quiz 7 q75-1"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#s5",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-7-q75-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "\"LP-204가 주말에 뜨면 어디에 물어야 빨라?\"에 알맞은 조합은?",
+    "en": "Quiz 7 q75-2"
+   },
+   "page": "07_graph_ontology",
+   "anchor": "#s5",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  }
+ ],
+ "edges": [
+  {
+   "s": "lab:method/cosine-threshold",
+   "p": "lab:broader",
+   "o": "lab:topic/accuracy-metrics",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/score-scale",
+   "p": "lab:broader",
+   "o": "lab:topic/embedding-space",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/knowledge-graph",
+   "p": "lab:broader",
+   "o": "lab:topic/knowledge-graph",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/graphrag",
+   "p": "lab:broader",
+   "o": "lab:topic/rag",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/ontology",
+   "p": "lab:broader",
+   "o": "lab:topic/knowledge-graph",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/subclass-filter",
+   "p": "lab:broader",
+   "o": "lab:topic/knowledge-graph",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/tool-by-question",
+   "p": "lab:broader",
+   "o": "lab:topic/deployment",
+   "anchor": "#s5",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/cosine-threshold",
+   "p": "lab:hasLimitation",
+   "o": "lab:limitation/score-scale",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/graphrag",
+   "p": "lab:derivedFrom",
+   "o": "lab:concept/knowledge-graph",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/graphrag",
+   "p": "lab:relatedTo",
+   "o": "lab:topic/embedding-space",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/graphrag-multihop",
+   "p": "lab:supports",
+   "o": "lab:method/graphrag",
+   "anchor": "#duel",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/subclass-filter",
+   "p": "lab:derivedFrom",
+   "o": "lab:concept/ontology",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/subclass-filter",
+   "p": "lab:relatedTo",
+   "o": "lab:topic/deployment",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:sim/v7-graph3d",
+   "p": "lab:demonstratedBy",
+   "o": "lab:concept/knowledge-graph",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/knowledge-graph",
+   "p": "lab:assertedIn",
+   "o": "lab:work/hogan2021kg",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/graphrag",
+   "p": "lab:assertedIn",
+   "o": "lab:work/edge2024graphrag",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/graphrag-multihop",
+   "p": "lab:assertedIn",
+   "o": "lab:work/ahn2026vdb",
+   "anchor": "#duel",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/ontology",
+   "p": "lab:assertedIn",
+   "o": "lab:work/w3c_skos",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-7-q71-1",
+   "p": "lab:assesses",
+   "o": "lab:method/cosine-threshold",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-7-q71-2",
+   "p": "lab:assesses",
+   "o": "lab:method/cosine-threshold",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-7-q72-1",
+   "p": "lab:assesses",
+   "o": "lab:concept/knowledge-graph",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-7-q72-2",
+   "p": "lab:assesses",
+   "o": "lab:concept/knowledge-graph",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-7-q73-1",
+   "p": "lab:assesses",
+   "o": "lab:method/graphrag",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-7-q73-2",
+   "p": "lab:assesses",
+   "o": "lab:method/graphrag",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-7-q74-1",
+   "p": "lab:assesses",
+   "o": "lab:concept/ontology",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-7-q74-2",
+   "p": "lab:assesses",
+   "o": "lab:concept/ontology",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-7-q75-1",
+   "p": "lab:assesses",
+   "o": "lab:method/tool-by-question",
+   "anchor": "#s5",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-7-q75-2",
+   "p": "lab:assesses",
+   "o": "lab:method/tool-by-question",
+   "anchor": "#s5",
+   "confidence": "high"
+  }
+ ]
+}

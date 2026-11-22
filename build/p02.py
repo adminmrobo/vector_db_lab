@@ -15,7 +15,7 @@ def body():
         [('BoW', 'Bag of Words, 낱말 세기'), ('cos', '코사인, 두 화살표 사이 각도로 잰 닮음'), ('dot', '내적, 자리끼리 곱해 더한 값'), ('d', '차원 수, 좌표 숫자의 개수')])
 
     b += section('map', '큰 그림 — 이 장은 어디쯤인가',
-                 '<div class="mapbar"><span>1장 · 표의 한계</span><i>→</i><span class="on">2장 · 임베딩</span><i>→</i><span>3장 · 벡터 창고</span><i>→</i><span>4장 · LLM과 RAG</span><i>→</i><span>5장 · 현장 사례</span></div>'
+                 '<div class="mapbar"><span>1장 · 표의 한계</span><i>→</i><span class="on">2장 · 임베딩</span><i>→</i><span>3장 · 벡터 창고</span><i>→</i><span>4장 · LLM과 RAG</span><i>→</i><span>5장 · 현장 사례</span><i>→</i><span>6장 · 어텐션 3D</span><i>→</i><span>7장 · 그래프·온톨로지</span></div>'
                  '<p>1장의 결론은 "글자 ≠ 뜻"이었습니다. 2장은 뜻을 숫자로 바꾸는 법을 배웁니다. 여기서 만든 좌표를 3장에서 창고(벡터 DB)에 저장하고, 4장에서 LLM에게 넘깁니다.</p>'
                  + say('doc', 'front', '이 장은 네 걸음입니다. 낱말 세기(2-1) → 뜻의 좌표(2-2) → 가까움을 재는 자(2-3) → 문장으로 찾기(2-4). 앞 걸음의 한계가 다음 걸음의 이유가 됩니다.'))
 

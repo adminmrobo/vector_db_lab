@@ -426,6 +426,142 @@
    "type": "Simulation",
    "first_page": "05_cases"
   },
+  "lab:concept/retrieve-vs-read": {
+   "label": {
+    "ko": "찾기(벡터 DB, 모델 밖)와 읽기(어텐션, 모델 안)의 경계",
+    "en": "Retrieval versus reading"
+   },
+   "type": "Concept",
+   "first_page": "06_attention_3d"
+  },
+  "lab:concept/token-position": {
+   "label": {
+    "ko": "토큰 임베딩과 위치 정보",
+    "en": "Token embedding and positional encoding"
+   },
+   "type": "Concept",
+   "first_page": "06_attention_3d"
+  },
+  "lab:method/self-attention-qkv": {
+   "label": {
+    "ko": "어텐션 (Q·K 내적 → softmax → V 섞기)",
+    "en": "Scaled dot-product attention"
+   },
+   "type": "Method",
+   "first_page": "06_attention_3d"
+  },
+  "lab:concept/transformer-stack": {
+   "label": {
+    "ko": "여러 머리 어텐션과 층 쌓기 (인과 마스크)",
+    "en": "Multi-head attention and layer stacking"
+   },
+   "type": "Concept",
+   "first_page": "06_attention_3d"
+  },
+  "lab:concept/next-token": {
+   "label": {
+    "ko": "다음 말 확률과 근거의 영향",
+    "en": "Next-token probability"
+   },
+   "type": "Concept",
+   "first_page": "06_attention_3d"
+  },
+  "lab:claim/attention-dilution": {
+   "label": {
+    "ko": "근거 2개일 때 정답 조각에 머문 어텐션 55.7%, 5개일 때 49.5% (교육용 좌표)",
+    "en": "More chunks dilute attention"
+   },
+   "type": "Claim",
+   "first_page": "06_attention_3d"
+  },
+  "lab:limitation/long-context-middle": {
+   "label": {
+    "ko": "긴 프롬프트의 가운데는 놓치기 쉽다",
+    "en": "Lost in the middle"
+   },
+   "type": "Limitation",
+   "first_page": "06_attention_3d"
+  },
+  "lab:sim/v6-attention3d": {
+   "label": {
+    "ko": "어텐션 3D 실험",
+    "en": "Attention 3D lab"
+   },
+   "type": "Simulation",
+   "first_page": "06_attention_3d"
+  },
+  "lab:method/cosine-threshold": {
+   "label": {
+    "ko": "코사인 점수 분포로 문턱 정하기",
+    "en": "Choosing cosine thresholds from score distributions"
+   },
+   "type": "Method",
+   "first_page": "07_graph_ontology"
+  },
+  "lab:limitation/score-scale": {
+   "label": {
+    "ko": "코사인 점수의 눈금은 모델·데이터마다 다르다",
+    "en": "Score scales differ by model"
+   },
+   "type": "Limitation",
+   "first_page": "07_graph_ontology"
+  },
+  "lab:concept/knowledge-graph": {
+   "label": {
+    "ko": "지식 그래프 (주어, 관계, 목적어)",
+    "en": "Knowledge graph"
+   },
+   "type": "Concept",
+   "first_page": "07_graph_ontology"
+  },
+  "lab:method/graphrag": {
+   "label": {
+    "ko": "GraphRAG — 좌표로 입구, 그래프로 여러 걸음",
+    "en": "GraphRAG"
+   },
+   "type": "Method",
+   "first_page": "07_graph_ontology"
+  },
+  "lab:claim/graphrag-multihop": {
+   "label": {
+    "ko": "여러 걸음 질문 6개: 벡터만(조각 2개) 5개, GraphRAG(2걸음) 6개",
+    "en": "GraphRAG gathers multi-hop facts"
+   },
+   "type": "Claim",
+   "first_page": "07_graph_ontology"
+  },
+  "lab:concept/ontology": {
+   "label": {
+    "ko": "온톨로지 — 이름·다른 이름·계층·규칙",
+    "en": "Ontology"
+   },
+   "type": "Concept",
+   "first_page": "07_graph_ontology"
+  },
+  "lab:method/subclass-filter": {
+   "label": {
+    "ko": "하위 개념 추론으로 검색 범위 정하기",
+    "en": "Subclass-expanded filtering"
+   },
+   "type": "Method",
+   "first_page": "07_graph_ontology"
+  },
+  "lab:method/tool-by-question": {
+   "label": {
+    "ko": "질문 모양별 도구 고르기 (표·좌표·그래프·온톨로지)",
+    "en": "Choosing tools by question shape"
+   },
+   "type": "Method",
+   "first_page": "07_graph_ontology"
+  },
+  "lab:sim/v7-graph3d": {
+   "label": {
+    "ko": "지식 그래프 3D",
+    "en": "Knowledge graph 3D lab"
+   },
+   "type": "Simulation",
+   "first_page": "07_graph_ontology"
+  },
   "lab:sim/practice-search": {
    "label": {
     "ko": "리뷰 검색 창구",

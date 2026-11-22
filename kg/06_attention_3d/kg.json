@@ -1,0 +1,612 @@
+{
+ "version": "1.0",
+ "page": "06_attention_3d",
+ "nodes": [
+  {
+   "id": "lab:concept/retrieve-vs-read",
+   "type": "Concept",
+   "label": {
+    "ko": "찾기(벡터 DB, 모델 밖)와 읽기(어텐션, 모델 안)의 경계",
+    "en": "Retrieval versus reading"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#s1",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "LLM은 좌표가 아니라 프롬프트에 붙은 조각의 글을 받는다"
+   },
+   "source": [
+    {
+     "ref": "lewis2020rag",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:concept/token-position",
+   "type": "Concept",
+   "label": {
+    "ko": "토큰 임베딩과 위치 정보",
+    "en": "Token embedding and positional encoding"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "토큰 좌표 + 위치 좌표"
+   },
+   "source": [
+    {
+     "ref": "vaswani2017attention",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:method/self-attention-qkv",
+   "type": "Method",
+   "label": {
+    "ko": "어텐션 (Q·K 내적 → softmax → V 섞기)",
+    "en": "Scaled dot-product attention"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#s3",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "모델 안의 부드러운 벡터 검색"
+   },
+   "source": [
+    {
+     "ref": "vaswani2017attention",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:concept/transformer-stack",
+   "type": "Concept",
+   "label": {
+    "ko": "여러 머리 어텐션과 층 쌓기 (인과 마스크)",
+    "en": "Multi-head attention and layer stacking"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:concept/next-token",
+   "type": "Concept",
+   "label": {
+    "ko": "다음 말 확률과 근거의 영향",
+    "en": "Next-token probability"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#s5",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:claim/attention-dilution",
+   "type": "Claim",
+   "label": {
+    "ko": "근거 2개일 때 정답 조각에 머문 어텐션 55.7%, 5개일 때 49.5% (교육용 좌표)",
+    "en": "More chunks dilute attention"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#duel",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "ahn2026vdb",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:limitation/long-context-middle",
+   "type": "Limitation",
+   "label": {
+    "ko": "긴 프롬프트의 가운데는 놓치기 쉽다",
+    "en": "Lost in the middle"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#sum",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "liu2024lost",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:sim/v6-attention3d",
+   "type": "Simulation",
+   "label": {
+    "ko": "어텐션 3D 실험",
+    "en": "Attention 3D lab"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/ahn2026vdb",
+   "type": "Work",
+   "label": {
+    "ko": "안 (2026) (주)M-Robo",
+    "en": "벡터 DB 연구실 가상 데이터 (영화 리뷰·SNS 글·랩플릭스 안내 문서·교육용 임베딩)"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/vaswani2017attention",
+   "type": "Work",
+   "label": {
+    "ko": "Vaswani 외 (2017) NeurIPS 2017",
+    "en": "Attention Is All You Need"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/lewis2020rag",
+   "type": "Work",
+   "label": {
+    "ko": "Lewis 외 (2020) NeurIPS 2020",
+    "en": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/liu2024lost",
+   "type": "Work",
+   "label": {
+    "ko": "Liu 외 (2024) Transactions of the Association for Computational Linguistics",
+    "en": "Lost in the Middle: How Language Models Use Long Contexts"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/su2024rope",
+   "type": "Work",
+   "label": {
+    "ko": "Su 외 (2024) Neurocomputing",
+    "en": "RoFormer: Enhanced Transformer with Rotary Position Embedding"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-6-q61-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "RAG에서 LLM이 벡터 DB로부터 실제로 받는 것은?",
+    "en": "Quiz 6 q61-1"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-6-q61-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "어텐션이 쓰이는 곳으로 맞는 것은?",
+    "en": "Quiz 6 q61-2"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-6-q62-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "위치 정보를 더하는 이유는?",
+    "en": "Quiz 6 q62-1"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-6-q62-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "물결 길이 2일 때 자리 1의 위치 값 sin(0.5)는 대략?",
+    "en": "Quiz 6 q62-2"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-6-q63-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "점수 2, 1, 0의 softmax 비율로 맞는 것은?",
+    "en": "Quiz 6 q63-1"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-6-q63-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "어텐션과 3장 벡터 검색의 가장 큰 차이는?",
+    "en": "Quiz 6 q63-2"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-6-q64-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "머리를 여러 개 두는 이유는?",
+    "en": "Quiz 6 q64-1"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-6-q64-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "층을 지날수록 토큰 좌표는?",
+    "en": "Quiz 6 q64-2"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-6-q65-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "근거 없이 물었을 때 틀린 \"14일\"이 나오는 이유(이 실험의 가정)는?",
+    "en": "Quiz 6 q65-1"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#s5",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-6-q65-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "현행·구버전 규정을 둘 다 붙이면?",
+    "en": "Quiz 6 q65-2"
+   },
+   "page": "06_attention_3d",
+   "anchor": "#s5",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  }
+ ],
+ "edges": [
+  {
+   "s": "lab:concept/retrieve-vs-read",
+   "p": "lab:broader",
+   "o": "lab:topic/rag",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/token-position",
+   "p": "lab:broader",
+   "o": "lab:topic/positional-encoding",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/self-attention-qkv",
+   "p": "lab:broader",
+   "o": "lab:topic/self-attention",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/transformer-stack",
+   "p": "lab:broader",
+   "o": "lab:topic/multi-head-attention",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/next-token",
+   "p": "lab:broader",
+   "o": "lab:topic/transformer",
+   "anchor": "#s5",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/long-context-middle",
+   "p": "lab:broader",
+   "o": "lab:topic/attention-mechanism",
+   "anchor": "#sum",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/self-attention-qkv",
+   "p": "lab:relatedTo",
+   "o": "lab:topic/embedding-space",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/token-position",
+   "p": "lab:prerequisiteOf",
+   "o": "lab:method/self-attention-qkv",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/self-attention-qkv",
+   "p": "lab:partOf",
+   "o": "lab:concept/transformer-stack",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/retrieve-vs-read",
+   "p": "lab:contrastsWith",
+   "o": "lab:method/self-attention-qkv",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/attention-dilution",
+   "p": "lab:supports",
+   "o": "lab:limitation/long-context-middle",
+   "anchor": "#duel",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:sim/v6-attention3d",
+   "p": "lab:demonstratedBy",
+   "o": "lab:method/self-attention-qkv",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/retrieve-vs-read",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lewis2020rag",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/token-position",
+   "p": "lab:assertedIn",
+   "o": "lab:work/vaswani2017attention",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/self-attention-qkv",
+   "p": "lab:assertedIn",
+   "o": "lab:work/vaswani2017attention",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/attention-dilution",
+   "p": "lab:assertedIn",
+   "o": "lab:work/ahn2026vdb",
+   "anchor": "#duel",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/long-context-middle",
+   "p": "lab:assertedIn",
+   "o": "lab:work/liu2024lost",
+   "anchor": "#sum",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/self-attention-qkv",
+   "p": "lab:explainedIn",
+   "o": "lab:work/su2024rope",
+   "anchor": "#export",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-6-q61-1",
+   "p": "lab:assesses",
+   "o": "lab:concept/retrieve-vs-read",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-6-q61-2",
+   "p": "lab:assesses",
+   "o": "lab:concept/retrieve-vs-read",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-6-q62-1",
+   "p": "lab:assesses",
+   "o": "lab:concept/token-position",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-6-q62-2",
+   "p": "lab:assesses",
+   "o": "lab:concept/token-position",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-6-q63-1",
+   "p": "lab:assesses",
+   "o": "lab:method/self-attention-qkv",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-6-q63-2",
+   "p": "lab:assesses",
+   "o": "lab:method/self-attention-qkv",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-6-q64-1",
+   "p": "lab:assesses",
+   "o": "lab:concept/transformer-stack",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-6-q64-2",
+   "p": "lab:assesses",
+   "o": "lab:concept/transformer-stack",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-6-q65-1",
+   "p": "lab:assesses",
+   "o": "lab:concept/next-token",
+   "anchor": "#s5",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-6-q65-2",
+   "p": "lab:assesses",
+   "o": "lab:concept/next-token",
+   "anchor": "#s5",
+   "confidence": "high"
+  }
+ ]
+}

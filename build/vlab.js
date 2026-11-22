@@ -57,11 +57,12 @@ function cloud(n,seed,nc){var r=rng(seed||11),C=[],P=[];nc=nc||9;for(var c=0;c<n
 function d2(a,b){var s=0;for(var j=0;j<a.length;j++){var t=a[j]-b[j];s+=t*t;}return s;}
 function exact(P,q,k){var a=P.map(function(p,i){return [d2(p,q),i]});a.sort(function(x,y){return x[0]-y[0]});return a.slice(0,k).map(function(x){return x[1]});}
 /* k-평균 (IVF 서랍 만들기) */
-function kmeans(P,k,seed,it){var r=rng(seed||3),C=[];for(var i=0;i<k;i++)C.push(P[Math.floor(r()*P.length)].slice());var lab=new Array(P.length);
+function kmeans(P,k,seed,it){var r=rng(seed||3),C=[],dm=P[0].length;for(var i=0;i<k;i++)C.push(P[Math.floor(r()*P.length)].slice());var lab=new Array(P.length);
   for(var t=0;t<(it||12);t++){for(i=0;i<P.length;i++){var b=0,bd=Infinity;for(var c=0;c<k;c++){var dd=d2(P[i],C[c]);if(dd<bd){bd=dd;b=c;}}lab[i]=b;}
-    var S=C.map(function(){return [0,0,0]});for(i=0;i<P.length;i++){S[lab[i]][0]+=P[i][0];S[lab[i]][1]+=P[i][1];S[lab[i]][2]++;}
-    for(c=0;c<k;c++)if(S[c][2])C[c]=[S[c][0]/S[c][2],S[c][1]/S[c][2]];}
+    var S=C.map(function(){return new Array(dm+1).fill(0)});for(i=0;i<P.length;i++){for(var j=0;j<dm;j++)S[lab[i]][j]+=P[i][j];S[lab[i]][dm]++;}
+    for(c=0;c<k;c++)if(S[c][dm])C[c]=S[c].slice(0,dm).map(function(x){return x/S[c][dm]});}
   var lists=C.map(function(){return []});for(i=0;i<P.length;i++)lists[lab[i]].push(i);return {C:C,lab:lab,lists:lists};}
+/* 서랍 색인 (차원 수와 상관없이) */
 function ivfSearch(P,ivf,q,k,nprobe){var order=ivf.C.map(function(c,i){return [d2(c,q),i]}).sort(function(a,b){return a[0]-b[0]}).slice(0,nprobe);var cand=[],cmp=ivf.C.length;
   order.forEach(function(o){ivf.lists[o[1]].forEach(function(i){cand.push([d2(P[i],q),i]);cmp++;})});cand.sort(function(a,b){return a[0]-b[0]});
   return {ids:cand.slice(0,k).map(function(x){return x[1]}),cmp:cmp,probed:order.map(function(o){return o[1]})};}
@@ -120,6 +121,54 @@ function pca2(V){var n=V.length,p=V[0].length,mu=new Array(p).fill(0);V.forEach(
   function power(defl){var r=rng(9),b=[];for(var j=0;j<p;j++)b.push(r()-.5);for(var it=0;it<80;it++){var nb=new Array(p).fill(0);X.forEach(function(x){var s=dot(x,b);defl.forEach(function(d){s-=dot(x,d)*dot(d,b)});for(var j=0;j<p;j++)nb[j]+=s*x[j];});
       defl.forEach(function(d){var t=dot(nb,d);for(var j=0;j<p;j++)nb[j]-=t*d[j]});var nn=norm(nb)||1;b=nb.map(function(x){return x/nn});}return b;}
   var a=power([]),b=power([a]);return {a:a,b:b,mu:mu,xy:X.map(function(x){return [dot(x,a),dot(x,b)]}),proj:function(v){var x=v.map(function(t,j){return t-mu[j]});return [dot(x,a),dot(x,b)];}};}
+
+/* ── 여러 축 PCA (3D 지도) ── */
+function pcaK(V,K){var n=V.length,p=V[0].length,mu=new Array(p).fill(0);V.forEach(function(v){for(var j=0;j<p;j++)mu[j]+=v[j]/n});var X=V.map(function(v){return v.map(function(x,j){return x-mu[j]})}),B=[];
+  for(var c=0;c<K;c++){var r=rng(9+c),b=[];for(var j=0;j<p;j++)b.push(r()-.5);for(var it=0;it<90;it++){var nb=new Array(p).fill(0);X.forEach(function(x){var s0=dot(x,b);B.forEach(function(d){s0-=dot(x,d)*dot(d,b)});for(var j=0;j<p;j++)nb[j]+=s0*x[j];});
+    B.forEach(function(d){var t=dot(nb,d);for(var j=0;j<p;j++)nb[j]-=t*d[j]});var nn=norm(nb)||1;b=nb.map(function(x){return x/nn});}B.push(b);}
+  function proj(v){var x=v.map(function(t,j){return t-mu[j]});return B.map(function(b){return dot(x,b)});}
+  return {B:B,mu:mu,xyz:V.map(proj),proj:proj};}
+/* ── 3차원 힘 배치 (지식 그래프 그림) ── */
+function layout3d(n,edges,seed){var r=rng(seed||7),P=[];for(var i=0;i<n;i++)P.push([r()-.5,r()-.5,r()-.5]);
+  for(var it=0;it<260;it++){var F=P.map(function(){return [0,0,0]}),k=1.1/Math.sqrt(n),cool=.06*(1-it/260)+.004;
+    for(i=0;i<n;i++)for(var j=i+1;j<n;j++){var dx=[P[i][0]-P[j][0],P[i][1]-P[j][1],P[i][2]-P[j][2]],d=Math.sqrt(dx[0]*dx[0]+dx[1]*dx[1]+dx[2]*dx[2])+1e-3,f=k*k/d/d;for(var a=0;a<3;a++){F[i][a]+=dx[a]*f;F[j][a]-=dx[a]*f;}}
+    edges.forEach(function(e){var i2=e[0],j2=e[1],dx=[P[i2][0]-P[j2][0],P[i2][1]-P[j2][1],P[i2][2]-P[j2][2]],d=Math.sqrt(dx[0]*dx[0]+dx[1]*dx[1]+dx[2]*dx[2])+1e-3,f=d*d/k*0.15;for(var a=0;a<3;a++){F[i2][a]-=dx[a]/d*f;F[j2][a]+=dx[a]/d*f;}});
+    for(i=0;i<n;i++)for(a=0;a<3;a++)F[i][a]-=P[i][a]*.15;
+    for(i=0;i<n;i++){var m=Math.sqrt(F[i][0]*F[i][0]+F[i][1]*F[i][1]+F[i][2]*F[i][2])||1;for(a=0;a<3;a++)P[i][a]+=F[i][a]/m*Math.min(m,cool);}}
+  var c=[0,0,0];P.forEach(function(p){for(var a=0;a<3;a++)c[a]+=p[a]/n});var rs=P.map(function(p){for(var a=0;a<3;a++)p[a]-=c[a];return Math.sqrt(p[0]*p[0]+p[1]*p[1]+p[2]*p[2])}).sort(function(x,y){return x-y}),mx=rs[Math.floor(n*.9)]||1;
+  return P.map(function(p){var q=p.map(function(x){return x/mx}),r=Math.sqrt(q[0]*q[0]+q[1]*q[1]+q[2]*q[2]);return r>1.15?q.map(function(x){return x/r*1.15}):q;});}
+/* ── 지식 그래프 검색: 벡터로 입구를 찾고, 관계를 따라 넓힌다 ── */
+function graphPrep(G){G.idx={};G.nodes.forEach(function(nd,i){G.idx[nd.id]=i;nd.vec=embed(nd.label+' '+nd.cls+' '+(nd.alt||[]).join(' ')).v;});G.adj=G.nodes.map(function(){return []});
+  G.edges.forEach(function(e,k){G.adj[G.idx[e.s]].push([G.idx[e.o],k]);G.adj[G.idx[e.o]].push([G.idx[e.s],k]);});return G;}
+function graphRAG(G,q,o){o=o||{};var hops=o.hops==null?2:o.hops,ne=o.entries||2,qv=embed(q).v,ent={},sc=G.nodes.map(function(nd,i){return [cos(qv,nd.vec),i]}).sort(function(a,b){return b[0]-a[0]});
+  G.nodes.forEach(function(nd,i){[nd.label].concat(nd.alt||[]).forEach(function(a){if(a.length>=2&&q.indexOf(a.replace(/\s*\(.*\)$/,''))>=0)ent[i]='글자';});});
+  sc.slice(0,ne).forEach(function(x){if(x[0]>.2&&!(x[1] in ent))ent[x[1]]='뜻';});
+  var seen={},front=Object.keys(ent).map(Number),depth={},facts={};front.forEach(function(i){seen[i]=1;depth[i]=0});
+  for(var h=0;h<hops;h++){var nf=[];front.forEach(function(i){G.adj[i].forEach(function(a){facts[a[1]]=1;if(!seen[a[0]]){seen[a[0]]=1;depth[a[0]]=h+1;nf.push(a[0]);}})});front=nf;}
+  var F=Object.keys(facts).map(Number).map(function(k){return G.edges[k]});
+  return {entries:ent,nodes:Object.keys(seen).map(Number),depth:depth,facts:F,docs:F.map(function(e){return e.doc}).filter(function(d,i,a){return a.indexOf(d)===i})};}
+/* ── 어텐션 (설명용): 질문 좌표로 문맥 토큰에 점수를 매기고 소프트맥스 ── */
+function softmax(s,beta){var m=Math.max.apply(null,s.map(function(x){return x*beta})),e=s.map(function(x){return Math.exp(x*beta-m)}),Z=e.reduce(function(a,b){return a+b},0);return e.map(function(x){return x/Z});}
+function tokens(text){return text.split(/\s+/).filter(Boolean);}
+
+/* ── 3D 보기 (브라우저 전용): 끌어서 돌리고, 점을 눌러 고른다 ── */
+function view3d(cv,o){o=o||{};var st={yaw:o.yaw==null?.6:o.yaw,pitch:o.pitch==null?.35:o.pitch,zoom:o.zoom||1,auto:!window.REDUCED&&o.auto!==false,items:[],drag:null,proj:[]};
+  cv.style.touchAction='pan-y';cv.style.cursor='grab';
+  function P(p){var cy=Math.cos(st.yaw),sy=Math.sin(st.yaw),cp=Math.cos(st.pitch),sp=Math.sin(st.pitch);var x=p[0]*cy+p[2]*sy,z=-p[0]*sy+p[2]*cy,y=p[1]*cp-z*sp;z=p[1]*sp+z*cp;var f=3.4/(3.4+z);return [x*f,y*f,z,f];}
+  function draw(){var F=fit(cv),g=F.c,W=F.W,H=F.H,S=Math.min(W,H)*.40*st.zoom,cx=W/2,cy=H/2;g.fillStyle='#fff';g.fillRect(0,0,W,H);
+    function sx(q){return [cx+q[0]*S,cy-q[1]*S]}
+    if(o.axes!==false){[[[-1,-1,-1],[1,-1,-1],'#e6ebf1'],[[-1,-1,-1],[-1,1,-1],'#e6ebf1'],[[-1,-1,-1],[-1,-1,1],'#e6ebf1']].forEach(function(a){var p1=sx(P(a[0])),p2=sx(P(a[1]));g.strokeStyle=a[2];g.lineWidth=1;g.beginPath();g.moveTo(p1[0],p1[1]);g.lineTo(p2[0],p2[1]);g.stroke();});
+      for(var t=-1;t<=1.001;t+=.5){[[[t,-1,-1],[t,-1,1]],[[-1,-1,t],[1,-1,t]]].forEach(function(a){var p1=sx(P(a[0])),p2=sx(P(a[1]));g.strokeStyle='#f0f3f7';g.beginPath();g.moveTo(p1[0],p1[1]);g.lineTo(p2[0],p2[1]);g.stroke();});}}
+    var L=[];st.items.forEach(function(it){if(it.t==='ln'){var a=P(it.a),b=P(it.b);L.push({z:(a[2]+b[2])/2,f:function(){var p1=sx(a),p2=sx(b);g.globalAlpha=it.al==null?.7:it.al;g.strokeStyle=it.c;g.lineWidth=it.w||1;if(it.dash)g.setLineDash(it.dash);g.beginPath();g.moveTo(p1[0],p1[1]);g.lineTo(p2[0],p2[1]);g.stroke();g.setLineDash([]);g.globalAlpha=1;}});}
+      else if(it.t==='pl'){var q=it.q.map(P);L.push({z:q.reduce(function(s,x){return s+x[2]},0)/q.length+.5,f:function(){g.globalAlpha=it.al||.08;g.fillStyle=it.c;g.beginPath();q.forEach(function(x,i){var p1=sx(x);i?g.lineTo(p1[0],p1[1]):g.moveTo(p1[0],p1[1])});g.closePath();g.fill();g.globalAlpha=1;}});}
+      else{var a2=P(it.p);L.push({z:a2[2],it:it,f:function(){var p1=sx(a2),r=(it.r||4)*a2[3];g.globalAlpha=it.al==null?.9:it.al;if(it.star){g.fillStyle=it.c;g.font='700 '+Math.round(20*a2[3])+'px sans-serif';g.fillText('★',p1[0]-8,p1[1]+7);}else{g.fillStyle=it.c;g.beginPath();g.arc(p1[0],p1[1],r,0,6.2832);g.fill();if(it.ring){g.strokeStyle=it.ring;g.lineWidth=2;g.beginPath();g.arc(p1[0],p1[1],r+3,0,6.2832);g.stroke();g.lineWidth=1;}}
+        g.globalAlpha=1;if(it.label){g.fillStyle=it.lc||'#16212b';g.font=(it.bold?'700 ':'')+'12px "IBM Plex Sans KR",sans-serif';g.fillText(it.label,p1[0]+r+3,p1[1]-r);}st.proj.push([p1[0],p1[1],it]);}});}});
+    st.proj=[];L.sort(function(a,b){return b.z-a.z});L.forEach(function(x){x.f()});if(o.stamp)stamp(g,W,o.stamp);if(o.after)o.after(g,W,H);}
+  cv.addEventListener('pointerdown',function(e){st.drag=[e.clientX,e.clientY,st.yaw,st.pitch];st.moved=false;st.auto=false;cv.style.cursor='grabbing';});
+  window.addEventListener('pointermove',function(e){if(!st.drag)return;var dx=e.clientX-st.drag[0],dy=e.clientY-st.drag[1];if(Math.abs(dx)+Math.abs(dy)>4)st.moved=true;st.yaw=st.drag[2]+dx*.01;st.pitch=Math.max(-1.3,Math.min(1.3,st.drag[3]+dy*.01));draw();});
+  window.addEventListener('pointerup',function(e){if(!st.drag)return;var r=cv.getBoundingClientRect();if(!st.moved&&o.onPick){var mx=e.clientX-r.left,my=e.clientY-r.top,b=null,bd=400;st.proj.forEach(function(p){var d=(p[0]-mx)*(p[0]-mx)+(p[1]-my)*(p[1]-my);if(d<bd&&p[2].id!=null){bd=d;b=p[2]}});if(b)o.onPick(b.id);}st.drag=null;cv.style.cursor='grab';});
+  Loop.add(cv,function(dt,force){if(st.auto&&dt>0){st.yaw+=dt*.25;draw();}else if(dt===0||force)draw();});
+  return {set:function(items){st.items=items;draw();},draw:draw,state:st,toggleAuto:function(){st.auto=!st.auto;return st.auto},reset:function(){st.yaw=o.yaw==null?.6:o.yaw;st.pitch=o.pitch==null?.35:o.pitch;draw();}};}
 /* ── 그리기 ── */
 function niceTicks(lo,hi,n){var span=hi-lo,step=Math.pow(10,Math.floor(Math.log10(span/n))),err=span/n/step;if(err>=7.5)step*=10;else if(err>=3.5)step*=5;else if(err>=1.5)step*=2;var t=[],s=Math.ceil(lo/step)*step;for(var v=s;v<=hi+1e-9;v+=step)t.push(+v.toFixed(10));return t;}
 function axes(g,W,H,o){var L=o.padL||54,R=o.padR||14,T=o.padT||14,B=o.padB||40;var x0=o.xmin,x1=o.xmax,y0=o.ymin,y1=o.ymax;
@@ -144,8 +193,8 @@ function dimBars(el,v,o){o=o||{};var idx=v.map(function(x,i){return [Math.abs(x)
   el.innerHTML=idx.map(function(x){var i=x[1],val=v[i],w=Math.round(Math.abs(val)*100);return '<div class="vb"><span>'+DIMS[i]+'</span><div class="tr"><div class="fl'+(val<0?' neg':'')+'" style="width:'+w+'%"></div></div><span class="v">'+val.toFixed(2)+'</span></div>';}).join('');}
 var api={init:init,load:load,movie:movie,tokenize:tokenize,embed:embed,wordVec:wordVec,dot:dot,norm:norm,cos:cos,euclid:euclid,topk:topk,like:like,likeAny:likeAny,rel:rel,prf:prf,
   grams:grams,bm25Index:bm25Index,rng:rng,gauss:gauss,cloud:cloud,d2:d2,exact:exact,kmeans:kmeans,ivfSearch:ivfSearch,graph:graph,graphSearch:graphSearch,recall:recall,
-  sentences:sentences,chunk:chunk,retrieve:retrieve,answer:answer,prompt:prompt,ragEval:ragEval,bigram:bigram,pca2:pca2,
-  niceTicks:niceTicks,axes:axes,dot2:dotp,legend:legend,fmt:fmt,pct:pct,kpis:kpis,esc:esc,mark:mark,markWord:markWord,stars:stars,dimBars:dimBars,
+  sentences:sentences,chunk:chunk,pcaK:pcaK,layout3d:layout3d,graphPrep:graphPrep,graphRAG:graphRAG,softmax:softmax,tokens:tokens,retrieve:retrieve,answer:answer,prompt:prompt,ragEval:ragEval,bigram:bigram,pca2:pca2,
+  view3d:view3d,niceTicks:niceTicks,axes:axes,dot2:dotp,legend:legend,fmt:fmt,pct:pct,kpis:kpis,esc:esc,mark:mark,markWord:markWord,stars:stars,dimBars:dimBars,
   get D(){return D},get DIMS(){return DIMS},get LEX(){return LEX}};
 return api;
 })();

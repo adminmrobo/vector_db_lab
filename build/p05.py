@@ -15,7 +15,7 @@ def body():
         [('pgvector', 'PostgreSQL의 벡터 확장'), ('CLIP', '그림과 글을 같은 좌표 공간에 놓는 임베딩 모델'), ('F1', '정밀도·재현율을 함께 본 점수')])
 
     b += section('map', '큰 그림 — 이 장은 어디쯤인가',
-                 '<div class="mapbar"><span>1장 · 표의 한계</span><i>→</i><span>2장 · 임베딩</span><i>→</i><span>3장 · 벡터 창고</span><i>→</i><span>4장 · LLM과 RAG</span><i>→</i><span class="on">5장 · 현장 사례</span><i>→</i><span>실전 연습장</span></div>'
+                 '<div class="mapbar"><span>1장 · 표의 한계</span><i>→</i><span>2장 · 임베딩</span><i>→</i><span>3장 · 벡터 창고</span><i>→</i><span>4장 · LLM과 RAG</span><i>→</i><span class="on">5장 · 현장 사례</span><i>→</i><span>6장 · 어텐션 3D</span><i>→</i><span>7장 · 그래프·온톨로지</span><i>→</i><span>실전 연습장</span></div>'
                  '<div class="tw"><table class="tb"><tr><th>사례</th><th>표(관계형 DB)가 맡는 것</th><th>벡터가 맡는 것</th><th>다시 쓰는 장</th></tr>'
                  '<tr><td>5-1 영화 추천</td><td>별점, 장르, 상영 시간</td><td>리뷰로 만든 영화의 분위기 좌표</td><td>2장 임베딩, 3장 필터</td></tr>'
                  '<tr><td>5-2 SNS 모니터링</td><td>날짜, 신고 기록</td><td>광고와 닮은 글, 처음 보는 이야기</td><td>1장 규칙의 한계, 2장 유사도</td></tr>'
@@ -156,7 +156,7 @@ def body():
                 ('fly', 'arms', '그래, 이번엔 좌표가 잘 잡았어. 문턱을 첫 주로 맞춘 게 공정했지.'),
                 ('sia', 'proud', '다섯 가지 도입 질문, 회사 가서 바로 써먹을래요.'),
                 ('moa', 'cheer', 'DB 설계 노트 마지막 장에 "둘 다"라고 크게 썼어요!'),
-                ('asst', 'e01', '인턴 교육 정규 과정 끝! 남은 건 실전 연습장이에요. 이번엔 여러분이 직접 운영해 봐요.')],
+                ('asst', 'e01', '인턴 교육 정규 과정 끝! 다음은 특강 두 개예요. LLM이 찾은 자료를 어떻게 읽는지 3D로 보고, 지식 그래프와 온톨로지까지 가요.')],
                '연구실 식구 모두와 방청석의 X1~X3가 함께 박수 치며 수료를 축하하는 장면',
                crowd('"하루 첫 인턴 교육, 대성공!" "처음 떨던 거 생각하면 감동이다…" "박수!"', moods=('e01', 'e16', 'e01')))
     return b
@@ -306,7 +306,7 @@ def build_page():
                                        ('임베딩에서 원문 복원', 'Morris 외 (2023) Text Embeddings Reveal (Almost) As Much As Text, EMNLP 2023'),
                                        ('pgvector', 'github.com/pgvector/pgvector')],
                                       ['챗봇 답과 기억 대화는 미리 적어 둔 흉내입니다. 기억 꺼내기 점수는 실제 계산입니다.', '도입 판단 도우미는 설명용 규칙입니다.', '광고·새 이야기 실험의 SNS 글은 가상입니다.'],
-                                      prev=('04_llm_rag.html', '4장 · LLM과 RAG'), nxt=('practice/index.html', '마지막 장 · 실전 연습장')),
+                                      prev=('04_llm_rag.html', '4장 · LLM과 RAG'), nxt=('06_attention_3d.html', '6장 · LLM은 찾은 자료를 어떻게 읽나')),
                  gloss=GLOSS, quizzes=QUIZ, page_js=JS, og='og_05')
 
 

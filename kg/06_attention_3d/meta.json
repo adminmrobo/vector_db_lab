@@ -1,0 +1,43 @@
+{
+ "title": "6장 · LLM은 찾은 자료를 어떻게 읽나 — 어텐션과 트랜스포머를 3D로",
+ "number": "6",
+ "series": "벡터 DB 연구실 (vector_db_lab)",
+ "about": [
+  "lab:method/self-attention-qkv",
+  "lab:concept/retrieve-vs-read"
+ ],
+ "basedOn": [
+  "ahn2026vdb",
+  "vaswani2017attention",
+  "lewis2020rag",
+  "liu2024lost",
+  "su2024rope"
+ ],
+ "educationalLevel": "입문",
+ "creator": [
+  {
+   "name": "안상선",
+   "role": "author"
+  }
+ ],
+ "contributor": [
+  {
+   "name": "AI 보조 제작",
+   "role": "assistant"
+  }
+ ],
+ "date": "2026-11-22",
+ "version": "1.0",
+ "language": [
+  "ko"
+ ],
+ "license": "",
+ "url": "https://adminmrobo.github.io/vector_db_lab/06_attention_3d.html",
+ "registry": "KG_00_registry 0.2",
+ "learningResourceType": "interactive explainer",
+ "seeAlso": "",
+ "domain": [
+  "ai"
+ ],
+ "suggestedCitation": "안상선 (2026). 6장 · LLM은 찾은 자료를 어떻게 읽나 — 어텐션과 트랜스포머를 3D로. 벡터 DB 연구실 (vector_db_lab) 6, v1.0."
+}

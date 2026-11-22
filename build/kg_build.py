@@ -39,6 +39,18 @@ REFS = {
                       'role': 'background', 'verified': V(year=False), 'checkedBy': 'README Background 절 (2026-11-22 확인)', 'checkedSource': 'web'},
     'pgvector': {'type': 'software', 'title': 'pgvector: Open-source vector similarity search for Postgres', 'author': [{'family': 'Kane', 'given': 'Andrew'}], 'publisher': 'GitHub', 'URL': 'https://github.com/pgvector/pgvector',
                  'role': 'background', 'verified': V(year=False, author=False)},
+    'vaswani2017attention': {'type': 'paper-conference', 'title': 'Attention Is All You Need', 'author': [{'family': 'Vaswani', 'given': 'Ashish'}, {'family': 'Shazeer', 'given': 'Noam'}, {'family': 'Parmar', 'given': 'Niki'}],
+                             'container-title': 'NeurIPS 2017', 'year': 2017, 'role': 'method', 'verified': V()},
+    'liu2024lost': {'type': 'article-journal', 'title': 'Lost in the Middle: How Language Models Use Long Contexts', 'author': [{'family': 'Liu', 'given': 'Nelson F.'}, {'family': 'Lin', 'given': 'Kevin'}, {'family': 'Hewitt', 'given': 'John'}],
+                    'container-title': 'Transactions of the Association for Computational Linguistics', 'volume': '12', 'year': 2024, 'role': 'background', 'verified': V()},
+    'su2024rope': {'type': 'article-journal', 'title': 'RoFormer: Enhanced Transformer with Rotary Position Embedding', 'author': [{'family': 'Su', 'given': 'Jianlin'}, {'family': 'Lu', 'given': 'Yu'}, {'family': 'Pan', 'given': 'Shengfeng'}],
+                   'container-title': 'Neurocomputing', 'volume': '568', 'year': 2024, 'role': 'background', 'verified': V()},
+    'edge2024graphrag': {'type': 'article', 'title': 'From Local to Global: A Graph RAG Approach to Query-Focused Summarization', 'author': [{'family': 'Edge', 'given': 'Darren'}, {'family': 'Trinh', 'given': 'Ha'}, {'family': 'Cheng', 'given': 'Newman'}],
+                         'container-title': 'arXiv:2404.16130', 'year': 2024, 'role': 'method', 'verified': V()},
+    'hogan2021kg': {'type': 'article-journal', 'title': 'Knowledge Graphs', 'author': [{'family': 'Hogan', 'given': 'Aidan'}, {'family': 'Blomqvist', 'given': 'Eva'}, {'family': 'Cochez', 'given': 'Michael'}],
+                    'container-title': 'ACM Computing Surveys', 'volume': '54', 'issue': '4', 'year': 2021, 'role': 'background', 'verified': V()},
+    'w3c_skos': {'type': 'webpage', 'title': 'SKOS Simple Knowledge Organization System Reference', 'author': [{'family': 'W3C', 'given': ''}], 'publisher': 'W3C', 'URL': 'https://www.w3.org/TR/skos-reference/',
+                 'year': 2009, 'role': 'background', 'verified': V()},
 }
 
 
@@ -222,6 +234,48 @@ def pages():
         ('lab:method/content-recommend', 'hasLimitation', 'lab:limitation/cold-start', '#s1'), ('lab:claim/spam-f1', 'supports', 'lab:method/spam-novelty', '#duel'),
         ('lab:method/chat-memory', 'hasLimitation', 'lab:limitation/embedding-privacy', '#s3'), ('lab:method/adoption-check', 'raises', 'lab:limitation/embedding-privacy', '#s4'),
         ('lab:sim/v5-sns', 'demonstratedBy', 'lab:method/spam-novelty', '#s2')], (p05.QUIZ, lambda q: '#s' + q[2]))
+
+    import p_ch6
+    at = R['att']
+    QMAP.update({'q61': 'lab:concept/retrieve-vs-read', 'q62': 'lab:concept/token-position', 'q63': 'lab:method/self-attention-qkv', 'q64': 'lab:concept/transformer-stack', 'q65': 'lab:concept/next-token'})
+    P['06'] = ('06_attention_3d', '6', '6장 · LLM은 찾은 자료를 어떻게 읽나 — 어텐션과 트랜스포머를 3D로', ['lab:method/self-attention-qkv', 'lab:concept/retrieve-vs-read'],
+               ['ahn2026vdb', 'vaswani2017attention', 'lewis2020rag', 'liu2024lost', 'su2024rope'], [
+        ('lab:concept/retrieve-vs-read', 'Concept', '찾기(벡터 DB, 모델 밖)와 읽기(어텐션, 모델 안)의 경계', 'Retrieval versus reading', '#s1', 1, 'LLM은 좌표가 아니라 프롬프트에 붙은 조각의 글을 받는다', 'lewis2020rag'),
+        ('lab:concept/token-position', 'Concept', '토큰 임베딩과 위치 정보', 'Token embedding and positional encoding', '#s2', 2, '토큰 좌표 + 위치 좌표', 'vaswani2017attention'),
+        ('lab:method/self-attention-qkv', 'Method', '어텐션 (Q·K 내적 → softmax → V 섞기)', 'Scaled dot-product attention', '#s3', 1, '모델 안의 부드러운 벡터 검색', 'vaswani2017attention'),
+        ('lab:concept/transformer-stack', 'Concept', '여러 머리 어텐션과 층 쌓기 (인과 마스크)', 'Multi-head attention and layer stacking', '#s4', 2, ''),
+        ('lab:concept/next-token', 'Concept', '다음 말 확률과 근거의 영향', 'Next-token probability', '#s5', 2, ''),
+        ('lab:claim/attention-dilution', 'Claim', '근거 2개일 때 정답 조각에 머문 어텐션 %.1f%%, 5개일 때 %.1f%% (교육용 좌표)' % (at['k2']['focus'] * 100, at['k5']['focus'] * 100), 'More chunks dilute attention', '#duel', 2, '', 'ahn2026vdb'),
+        ('lab:limitation/long-context-middle', 'Limitation', '긴 프롬프트의 가운데는 놓치기 쉽다', 'Lost in the middle', '#sum', 2, '', 'liu2024lost'),
+        ('lab:sim/v6-attention3d', 'Simulation', '어텐션 3D 실험', 'Attention 3D lab', '#s3', 2, '')], [
+        ('lab:concept/retrieve-vs-read', 'broader', T + 'rag', '#s1'), ('lab:concept/token-position', 'broader', T + 'positional-encoding', '#s2'),
+        ('lab:method/self-attention-qkv', 'broader', T + 'self-attention', '#s3'), ('lab:concept/transformer-stack', 'broader', T + 'multi-head-attention', '#s4'),
+        ('lab:concept/next-token', 'broader', T + 'transformer', '#s5'), ('lab:limitation/long-context-middle', 'broader', T + 'attention-mechanism', '#sum'),
+        ('lab:method/self-attention-qkv', 'relatedTo', T + 'embedding-space', '#s3'), ('lab:concept/token-position', 'prerequisiteOf', 'lab:method/self-attention-qkv', '#s2'),
+        ('lab:method/self-attention-qkv', 'partOf', 'lab:concept/transformer-stack', '#s4'), ('lab:concept/retrieve-vs-read', 'contrastsWith', 'lab:method/self-attention-qkv', '#s1'),
+        ('lab:claim/attention-dilution', 'supports', 'lab:limitation/long-context-middle', '#duel'), ('lab:sim/v6-attention3d', 'demonstratedBy', 'lab:method/self-attention-qkv', '#s3')], (p_ch6.QUIZ, lambda q: '#s' + q[2]))
+
+    import p_ch7
+    g7 = R['graph7']
+    QMAP.update({'q71': 'lab:method/cosine-threshold', 'q72': 'lab:concept/knowledge-graph', 'q73': 'lab:method/graphrag', 'q74': 'lab:concept/ontology', 'q75': 'lab:method/tool-by-question'})
+    P['07'] = ('07_graph_ontology', '7', '7장 · 좌표와 관계 — 코사인 유사도 실전, 지식 그래프, 온톨로지', ['lab:concept/knowledge-graph', 'lab:concept/ontology'],
+               ['ahn2026vdb', 'edge2024graphrag', 'hogan2021kg', 'w3c_skos'], [
+        ('lab:method/cosine-threshold', 'Method', '코사인 점수 분포로 문턱 정하기', 'Choosing cosine thresholds from score distributions', '#s1', 2, '정답·오답 분포가 갈리는 곳'),
+        ('lab:limitation/score-scale', 'Limitation', '코사인 점수의 눈금은 모델·데이터마다 다르다', 'Score scales differ by model', '#s1', 2, ''),
+        ('lab:concept/knowledge-graph', 'Concept', '지식 그래프 (주어, 관계, 목적어)', 'Knowledge graph', '#s2', 1, '개체와 이름 붙은 관계', 'hogan2021kg'),
+        ('lab:method/graphrag', 'Method', 'GraphRAG — 좌표로 입구, 그래프로 여러 걸음', 'GraphRAG', '#s3', 1, '', 'edge2024graphrag'),
+        ('lab:claim/graphrag-multihop', 'Claim', '여러 걸음 질문 %d개: 벡터만(조각 2개) %d개, GraphRAG(2걸음) %d개' % (g7['mq'], g7['vec2']['ok'], g7['graph']['ok']), 'GraphRAG gathers multi-hop facts', '#duel', 2, '', 'ahn2026vdb'),
+        ('lab:concept/ontology', 'Concept', '온톨로지 — 이름·다른 이름·계층·규칙', 'Ontology', '#s4', 1, '', 'w3c_skos'),
+        ('lab:method/subclass-filter', 'Method', '하위 개념 추론으로 검색 범위 정하기', 'Subclass-expanded filtering', '#s4', 2, ''),
+        ('lab:method/tool-by-question', 'Method', '질문 모양별 도구 고르기 (표·좌표·그래프·온톨로지)', 'Choosing tools by question shape', '#s5', 2, ''),
+        ('lab:sim/v7-graph3d', 'Simulation', '지식 그래프 3D', 'Knowledge graph 3D lab', '#s2', 2, '')], [
+        ('lab:method/cosine-threshold', 'broader', T + 'accuracy-metrics', '#s1'), ('lab:limitation/score-scale', 'broader', T + 'embedding-space', '#s1'),
+        ('lab:concept/knowledge-graph', 'broader', T + 'knowledge-graph', '#s2'), ('lab:method/graphrag', 'broader', T + 'rag', '#s3'), ('lab:concept/ontology', 'broader', T + 'knowledge-graph', '#s4'),
+        ('lab:method/subclass-filter', 'broader', T + 'knowledge-graph', '#s4'), ('lab:method/tool-by-question', 'broader', T + 'deployment', '#s5'),
+        ('lab:method/cosine-threshold', 'hasLimitation', 'lab:limitation/score-scale', '#s1'), ('lab:method/graphrag', 'derivedFrom', 'lab:concept/knowledge-graph', '#s3'),
+        ('lab:method/graphrag', 'relatedTo', T + 'embedding-space', '#s3'), ('lab:claim/graphrag-multihop', 'supports', 'lab:method/graphrag', '#duel'),
+        ('lab:method/subclass-filter', 'derivedFrom', 'lab:concept/ontology', '#s4'), ('lab:method/subclass-filter', 'relatedTo', T + 'deployment', '#s4'),
+        ('lab:sim/v7-graph3d', 'demonstratedBy', 'lab:concept/knowledge-graph', '#s2')], (p_ch7.QUIZ, lambda q: '#s' + q[2]))
 
     P['practice'] = ('practice/index', '6', '마지막 장 · 실전 연습장 — 랩플릭스 운영실', ['lab:sim/practice-rag'], ['ahn2026vdb'], [
         ('lab:sim/practice-search', 'Simulation', '리뷰 검색 창구', 'Review search desk', '#search', 2, '방식·개수·별점 조건으로 F1 맞추기'),

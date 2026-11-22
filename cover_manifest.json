@@ -36,6 +36,16 @@
     "export": true
    },
    {
+    "path": "06_attention_3d.html",
+    "kg": true,
+    "export": true
+   },
+   {
+    "path": "07_graph_ontology.html",
+    "kg": true,
+    "export": true
+   },
+   {
     "path": "practice/index.html",
     "kg": true,
     "export": true
@@ -48,6 +58,8 @@
    "kg/03_vector_store/kg.json",
    "kg/04_llm_rag/kg.json",
    "kg/05_cases/kg.json",
+   "kg/06_attention_3d/kg.json",
+   "kg/07_graph_ontology/kg.json",
    "kg/practice/kg.json"
   ]
  },
@@ -56,7 +68,7 @@
    "ko"
   ],
   "pages": {
-   "ko": 7
+   "ko": 9
   },
   "readme_langs": [
    "ko"
@@ -424,6 +436,124 @@
    "robot": "jupanbot-v2",
    "prompt_en": null,
    "source_of": "cover_05",
+   "status": "missing"
+  },
+  {
+   "id": "cover_07",
+   "role": "cover",
+   "page": "06_attention_3d.html",
+   "path": "img/cover_07.webp",
+   "size": [
+    1600,
+    900
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": "see docs/COVER_PROMPTS_vector_db_lab.md#cover_07",
+   "source_of": null,
+   "status": "missing",
+   "alt_ko": "문서 조각이 빛나는 띠로 이어지고 3층 판의 점들이 빨간 실로 이어진 어텐션 탑을 식구들이 올려다보는 장면"
+  },
+  {
+   "id": "thumb_07",
+   "role": "thumb",
+   "path": "img/thumb_07.webp",
+   "size": [
+    1200,
+    800
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": null,
+   "source_of": "cover_07",
+   "status": "missing"
+  },
+  {
+   "id": "og_07",
+   "role": "og",
+   "path": "img/og_07.webp",
+   "size": [
+    1200,
+    630
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": null,
+   "source_of": "cover_07",
+   "status": "missing"
+  },
+  {
+   "id": "cover_08",
+   "role": "cover",
+   "page": "07_graph_ontology.html",
+   "path": "img/cover_08.webp",
+   "size": [
+    1600,
+    900
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": "see docs/COVER_PROMPTS_vector_db_lab.md#cover_08",
+   "source_of": null,
+   "status": "missing",
+   "alt_ko": "구슬 그물 모형에서 초록 실이 길을 따라가고 바닥에 개념 나무 선반이 있는 연구실"
+  },
+  {
+   "id": "thumb_08",
+   "role": "thumb",
+   "path": "img/thumb_08.webp",
+   "size": [
+    1200,
+    800
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": null,
+   "source_of": "cover_08",
+   "status": "missing"
+  },
+  {
+   "id": "og_08",
+   "role": "og",
+   "path": "img/og_08.webp",
+   "size": [
+    1200,
+    630
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": null,
+   "source_of": "cover_08",
    "status": "missing"
   },
   {

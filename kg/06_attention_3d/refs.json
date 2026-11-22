@@ -1,0 +1,212 @@
+[
+ {
+  "id": "ahn2026vdb",
+  "type": "dataset",
+  "title": "벡터 DB 연구실 가상 데이터 (영화 리뷰·SNS 글·랩플릭스 안내 문서·교육용 임베딩)",
+  "author": [
+   {
+    "family": "안",
+    "given": "상선"
+   }
+  ],
+  "publisher": "(주)M-Robo",
+  "URL": "https://github.com/adminmrobo/vector_db_lab",
+  "issued": {
+   "date-parts": [
+    [
+     2026
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/ahn2026vdb",
+   "role": "data",
+   "supports": [],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": true,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "이 저장소 code/make_data.py · code/lexicon.py",
+   "checkedSource": "repo"
+  }
+ },
+ {
+  "id": "vaswani2017attention",
+  "type": "paper-conference",
+  "title": "Attention Is All You Need",
+  "author": [
+   {
+    "family": "Vaswani",
+    "given": "Ashish"
+   },
+   {
+    "family": "Shazeer",
+    "given": "Noam"
+   },
+   {
+    "family": "Parmar",
+    "given": "Niki"
+   }
+  ],
+  "container-title": "NeurIPS 2017",
+  "issued": {
+   "date-parts": [
+    [
+     2017
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/vaswani2017attention",
+   "role": "method",
+   "supports": [],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": true,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "페이지 참고문헌 목록에서 옮김 (외부 대조 안 함)",
+   "checkedSource": "page"
+  }
+ },
+ {
+  "id": "lewis2020rag",
+  "type": "paper-conference",
+  "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+  "author": [
+   {
+    "family": "Lewis",
+    "given": "Patrick"
+   },
+   {
+    "family": "Perez",
+    "given": "Ethan"
+   },
+   {
+    "family": "Piktus",
+    "given": "Aleksandra"
+   }
+  ],
+  "container-title": "NeurIPS 2020",
+  "issued": {
+   "date-parts": [
+    [
+     2020
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/lewis2020rag",
+   "role": "method",
+   "supports": [],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": true,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "페이지 참고문헌 목록에서 옮김 (외부 대조 안 함)",
+   "checkedSource": "page"
+  }
+ },
+ {
+  "id": "liu2024lost",
+  "type": "article-journal",
+  "title": "Lost in the Middle: How Language Models Use Long Contexts",
+  "author": [
+   {
+    "family": "Liu",
+    "given": "Nelson F."
+   },
+   {
+    "family": "Lin",
+    "given": "Kevin"
+   },
+   {
+    "family": "Hewitt",
+    "given": "John"
+   }
+  ],
+  "container-title": "Transactions of the Association for Computational Linguistics",
+  "volume": "12",
+  "issued": {
+   "date-parts": [
+    [
+     2024
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/liu2024lost",
+   "role": "background",
+   "supports": [],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": true,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "페이지 참고문헌 목록에서 옮김 (외부 대조 안 함)",
+   "checkedSource": "page"
+  }
+ },
+ {
+  "id": "su2024rope",
+  "type": "article-journal",
+  "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding",
+  "author": [
+   {
+    "family": "Su",
+    "given": "Jianlin"
+   },
+   {
+    "family": "Lu",
+    "given": "Yu"
+   },
+   {
+    "family": "Pan",
+    "given": "Shengfeng"
+   }
+  ],
+  "container-title": "Neurocomputing",
+  "volume": "568",
+  "issued": {
+   "date-parts": [
+    [
+     2024
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/su2024rope",
+   "role": "background",
+   "supports": [],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": true,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "페이지 참고문헌 목록에서 옮김 (외부 대조 안 함)",
+   "checkedSource": "page"
+  }
+ }
+]

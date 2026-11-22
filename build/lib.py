@@ -7,6 +7,7 @@ ROOT = os.path.dirname(HERE)
 PACK = os.environ.get('LAB_PACK', '/home/claude/adminmrobo/ahnboat_lab_explainer/packs/character/character_pack')
 R = json.load(open(os.path.join(ROOT, 'data', 'results.json'), encoding='utf-8'))
 CORPUS = json.load(open(os.path.join(ROOT, 'data', 'corpus.json'), encoding='utf-8'))
+GRAPH = json.load(open(os.path.join(ROOT, 'data', 'graph.json'), encoding='utf-8'))
 LEXICON = json.load(open(os.path.join(ROOT, 'data', 'lexicon.json'), encoding='utf-8'))
 SITE = 'https://adminmrobo.github.io/vector_db_lab/'
 REPO = 'https://github.com/adminmrobo/vector_db_lab'
@@ -227,7 +228,7 @@ def vlab_data():
     o = {'src': 'data/corpus.json · data/lexicon.json (가상 데이터)', 'movies': CORPUS['movies'], 'aspect_ko': CORPUS['aspect_ko'],
          'reviews': [{k: r[k] for k in ('id', 'movie', 'stars', 'date', 'text', 'asp') if k in r} | ({'sarcasm': True} if r.get('sarcasm') else {}) for r in CORPUS['reviews']],
          'sns': [{k: s[k] for k in ('id', 'day', 'text', 'topic', 'dup', 'issue', 'movie')} for s in CORPUS['sns']],
-         'kb': CORPUS['kb'], 'ragq': CORPUS['ragq'], 'searchq': CORPUS['searchq'], 'lexicon': LEXICON}
+         'kb': CORPUS['kb'], 'ragq': CORPUS['ragq'], 'searchq': CORPUS['searchq'], 'lexicon': LEXICON, 'graph': GRAPH}
     return '<script type="application/json" id="vlab-data">%s</script>' % json.dumps(o, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 
 

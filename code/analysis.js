@@ -42,6 +42,10 @@ out.ivf = [1, 2, 4, 8, 16].map(np => { let rc = 0, cmp = 0; Q.forEach(q => { con
 const G = VL.graph(P, 8, 5);
 out.graph = [10, 20, 40, 80].map(ef => { let rc = 0, cmp = 0; Q.forEach(q => { const t = VL.exact(P, q, 10), s = VL.graphSearch(P, G, q, 10, ef); rc += VL.recall(s.ids, t); cmp += s.cmp; }); return { ef, recall: r3(rc / Q.length), cmp: Math.round(cmp / Q.length) }; });
 out.graph_top = G.topIds.length;
+/* 고차원 확인: 교육용 24차원 리뷰 좌표 483개에 서랍 16개 */
+{ const RVv = R.map(r => r.vec), Q24 = d.searchq.map(q => VL.embed(q.q).v).concat(d.sns.map(s => s.vec).filter(v => VL.norm(v) > 0).slice(0, 60));
+  const iv = VL.kmeans(RVv, 16, 3, 12);
+  out.ivf24 = { note: '같은 거리(동점)는 정답으로 침', n: RVv.length, q: Q24.length, lists: 16, rows: [1, 2, 4, 8].map(np => { let rc = 0, cmp = 0; Q24.forEach(q => { const t = VL.exact(RVv, q, 10), lim = VL.d2(RVv[t[9]], q) + 1e-9, s = VL.ivfSearch(RVv, iv, q, 10, np); rc += s.ids.filter(i => VL.d2(RVv[i], q) <= lim).length / 10; cmp += s.cmp; }); return { nprobe: np, recall: r3(rc / Q24.length), cmp: Math.round(cmp / Q24.length) }; }) }; }
 out.storage = { n: 1e6, d: 768, gb: r3(1e6 * 768 * 4 / 1e9) };
 
 /* 4. RAG: 쪼갠 크기 × 검색 방식 */
@@ -87,5 +91,23 @@ out.novel = []; for (let day = 2; day <= 14; day++) { const prev = S.filter(s =>
   const nov = today.filter(s => Math.max(...prev.map(p => VL.cos(s.vec, p.vec))) < .6); out.novel.push({ day, n: today.length, novel: nov.length, issue: nov.filter(s => s.issue).length }); }
 out.issue_by_day = Array.from({ length: 14 }, (_, i) => S.filter(s => s.day === i + 1 && s.issue).length);
 
+/* 6장: 어텐션이 근거 조각에 얼마나 머무나 (교육용 좌표, 배율 β = 8) */
+{ const ch = VL.chunk(d.kb, 150, 0, true), A = d.ragq.filter(q => q.doc);
+  const focus = (k, beta) => { let tot = 0, hit = 0; A.forEach(q => { const h = VL.retrieve(ch, q.q, { k, alpha: .3, newest: true }), qv = VL.embed(q.q).v, toks = [];
+      h.forEach(x => VL.tokens(x.c.text).forEach(w => toks.push({ v: VL.embed(w).v, gold: x.c.text.indexOf(q.key) >= 0 })));
+      const w = VL.softmax(toks.map(t => VL.dot(qv, t.v)), beta); tot += toks.reduce((s0, t, i) => s0 + (t.gold ? w[i] : 0), 0); if (h.some(x => x.c.text.indexOf(q.key) >= 0)) hit++; });
+    return { focus: r3(tot / A.length), hit, n: A.length }; };
+  out.att = { k1: focus(1, 8), k2: focus(2, 8), k3: focus(3, 8), k5: focus(5, 8) };
+  out.softmax_ex = VL.softmax([2, 1, 0], 1).map(r3); }
+/* 7장: 여러 걸음 질문 — 벡터만 vs 그래프 */
+{ const G = VL.graphPrep(JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'graph.json')))), ch = VL.chunk(d.kb, 150, 0, true);
+  const fact = e => G.nodes[G.idx[e.s]].label + ' —' + e.p + '→ ' + G.nodes[G.idx[e.o]].label;
+  const vec = k => { let ok = 0, c = 0; G.mq.forEach(q => { const h = VL.retrieve(ch, q.q, { k, alpha: .3, newest: true }); c += h.reduce((a, x) => a + x.c.text.length, 0); if (q.docs.every(x => h.some(y => y.c.doc === x))) ok++; }); return { ok, chars: Math.round(c / G.mq.length) }; };
+  let gok = 0, gc = 0, gf = 0; G.mq.forEach(q => { const r = VL.graphRAG(G, q.q, { hops: 2 }); if (q.path.every(p => r.nodes.indexOf(G.idx[p]) >= 0)) gok++; gc += r.facts.map(fact).join(' / ').length; gf += r.facts.length; });
+  out.graph7 = { nodes: G.nodes.length, edges: G.edges.length, mq: G.mq.length, classes: G.ont.length, vec2: vec(2), vec5: vec(5), graph: { ok: gok, chars: Math.round(gc / G.mq.length), facts: r3(gf / G.mq.length) } };
+  /* 코사인 점수 분포: "재밌는 영화 리뷰" 정답과 오답 */
+  const q = d.searchq[0], qv = VL.embed(q.q).v, rel = R.filter(r => VL.rel(r, q.asp)).map(r => VL.cos(qv, r.vec)), irr = R.filter(r => !VL.rel(r, q.asp)).map(r => VL.cos(qv, r.vec));
+  const med = a => { const b = a.slice().sort((x, y) => x - y); return r3(b[Math.floor(b.length / 2)]); };
+  out.cosdist = { rel_med: med(rel), irr_med: med(irr), rel_n: rel.length, irr_n: irr.length }; }
 fs.writeFileSync(path.join(ROOT, 'data', 'results.json'), JSON.stringify(out, null, 1));
 console.log(JSON.stringify({ search_mean: out.search_mean, fun_like: out.fun_like, waste_like: out.waste_like, word_cos: out.word_cos, sent_cos: out.sent_cos, ivf: out.ivf, graph: out.graph, duel4: out.duel4, old_doc: out.old_doc, stock: out.stock_q, spam: out.spam, novel: out.novel, movie_sim: out.movie_sim, pref: out.pref_rank, bigram: out.bigram }, null, 0));

@@ -1,0 +1,42 @@
+{
+ "title": "2장 · 말을 좌표로 — 임베딩과 유사도",
+ "number": "2",
+ "series": "벡터 DB 연구실 (vector_db_lab)",
+ "about": [
+  "lab:concept/embedding",
+  "lab:metric/cosine"
+ ],
+ "basedOn": [
+  "ahn2026vdb",
+  "mikolov2013efficient",
+  "reimers2019sbert",
+  "ahn2026nlp"
+ ],
+ "educationalLevel": "입문",
+ "creator": [
+  {
+   "name": "안상선",
+   "role": "author"
+  }
+ ],
+ "contributor": [
+  {
+   "name": "AI 보조 제작",
+   "role": "assistant"
+  }
+ ],
+ "date": "2026-11-22",
+ "version": "1.0",
+ "language": [
+  "ko"
+ ],
+ "license": "",
+ "url": "https://adminmrobo.github.io/vector_db_lab/02_embedding.html",
+ "registry": "KG_00_registry 0.2",
+ "learningResourceType": "interactive explainer",
+ "seeAlso": "",
+ "domain": [
+  "ai"
+ ],
+ "suggestedCitation": "안상선 (2026). 2장 · 말을 좌표로 — 임베딩과 유사도. 벡터 DB 연구실 (vector_db_lab) 2, v1.0."
+}

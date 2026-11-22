@@ -1,0 +1,43 @@
+{
+ "title": "5장 · 현장 사례 — 영화 추천, SNS 모니터링, 챗봇의 기억, 도입 판단",
+ "number": "5",
+ "series": "벡터 DB 연구실 (vector_db_lab)",
+ "about": [
+  "lab:method/content-recommend",
+  "lab:method/chat-memory"
+ ],
+ "basedOn": [
+  "ahn2026vdb",
+  "spotify_annoy",
+  "radford2021clip",
+  "morris2023inversion",
+  "pgvector"
+ ],
+ "educationalLevel": "입문",
+ "creator": [
+  {
+   "name": "안상선",
+   "role": "author"
+  }
+ ],
+ "contributor": [
+  {
+   "name": "AI 보조 제작",
+   "role": "assistant"
+  }
+ ],
+ "date": "2026-11-22",
+ "version": "1.0",
+ "language": [
+  "ko"
+ ],
+ "license": "",
+ "url": "https://adminmrobo.github.io/vector_db_lab/05_cases.html",
+ "registry": "KG_00_registry 0.2",
+ "learningResourceType": "interactive explainer",
+ "seeAlso": "",
+ "domain": [
+  "ai"
+ ],
+ "suggestedCitation": "안상선 (2026). 5장 · 현장 사례 — 영화 추천, SNS 모니터링, 챗봇의 기억, 도입 판단. 벡터 DB 연구실 (vector_db_lab) 5, v1.0."
+}

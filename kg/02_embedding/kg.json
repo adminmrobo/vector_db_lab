@@ -1,0 +1,600 @@
+{
+ "version": "1.0",
+ "page": "02_embedding",
+ "nodes": [
+  {
+   "id": "lab:method/bag-of-words",
+   "type": "Method",
+   "label": {
+    "ko": "낱말 세기 (BoW)",
+    "en": "Bag of words"
+   },
+   "page": "02_embedding",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "낱말마다 자리 하나, 나온 횟수를 적음"
+   }
+  },
+  {
+   "id": "lab:concept/embedding",
+   "type": "Concept",
+   "label": {
+    "ko": "임베딩 (뜻의 좌표)",
+    "en": "Embedding"
+   },
+   "page": "02_embedding",
+   "anchor": "#s2",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "뜻이 비슷하면 가까운 실수 좌표"
+   },
+   "source": [
+    {
+     "ref": "mikolov2013efficient",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:concept/sentence-embedding",
+   "type": "Concept",
+   "label": {
+    "ko": "문장 임베딩",
+    "en": "Sentence embedding"
+   },
+   "page": "02_embedding",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "문장 전체를 좌표 하나로"
+   },
+   "source": [
+    {
+     "ref": "reimers2019sbert",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:metric/cosine",
+   "type": "Metric",
+   "label": {
+    "ko": "코사인 유사도",
+    "en": "Cosine similarity"
+   },
+   "page": "02_embedding",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "두 화살표 사이 각도로 잰 닮음, −1~1"
+   }
+  },
+  {
+   "id": "lab:metric/euclid-dot",
+   "type": "Metric",
+   "label": {
+    "ko": "유클리드 거리·내적",
+    "en": "Euclidean distance and dot product"
+   },
+   "page": "02_embedding",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "끝점 거리, 자리끼리 곱의 합"
+   }
+  },
+  {
+   "id": "lab:method/semantic-search",
+   "type": "Method",
+   "label": {
+    "ko": "의미 검색 (벡터 검색)",
+    "en": "Semantic search"
+   },
+   "page": "02_embedding",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "질문 좌표와 가장 가까운 k개"
+   }
+  },
+  {
+   "id": "lab:claim/vector-f1",
+   "type": "Claim",
+   "label": {
+    "ko": "여덟 가지 뜻 F1 평균: LIKE 0.442, 사전 0.831, 좌표 0.842",
+    "en": "Mean F1 by method"
+   },
+   "page": "02_embedding",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "ahn2026vdb",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:limitation/negation-sarcasm",
+   "type": "Limitation",
+   "label": {
+    "ko": "부정어·비꼼은 좌표도 자주 놓친다",
+    "en": "Negation and sarcasm"
+   },
+   "page": "02_embedding",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:claim/cosine-beats-dot",
+   "type": "Claim",
+   "label": {
+    "ko": "정규화 안 한 내적은 긴 리뷰를 올려 F1 평균 0.719 (코사인 0.842)",
+    "en": "Unnormalized dot favors long reviews"
+   },
+   "page": "02_embedding",
+   "anchor": "#duel",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:sim/v2-anatomy",
+   "type": "Simulation",
+   "label": {
+    "ko": "임베딩 해부실 + 낱말 지도",
+    "en": "Embedding anatomy lab"
+   },
+   "page": "02_embedding",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/ahn2026vdb",
+   "type": "Work",
+   "label": {
+    "ko": "안 (2026) (주)M-Robo",
+    "en": "벡터 DB 연구실 가상 데이터 (영화 리뷰·SNS 글·랩플릭스 안내 문서·교육용 임베딩)"
+   },
+   "page": "02_embedding",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/mikolov2013efficient",
+   "type": "Work",
+   "label": {
+    "ko": "Mikolov 외 (2013) arXiv:1301.3781",
+    "en": "Efficient Estimation of Word Representations in Vector Space"
+   },
+   "page": "02_embedding",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/reimers2019sbert",
+   "type": "Work",
+   "label": {
+    "ko": "Reimers 외 (2019) EMNLP-IJCNLP 2019",
+    "en": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks"
+   },
+   "page": "02_embedding",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/ahn2026nlp",
+   "type": "Work",
+   "label": {
+    "ko": "안 (2026) (주)M-Robo",
+    "en": "인공지능과 자연어 데이터 분석 (강좌 사이트)"
+   },
+   "page": "02_embedding",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-2-q21-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "낱말 세기로 \"꿀잼\"과 \"재밌어요\"의 닮음이 0인 이유는?",
+    "en": "Quiz 2 q21-1"
+   },
+   "page": "02_embedding",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-2-q21-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "\"꿀잼 강추\"와 \"재밌어요 강추\"의 낱말 세기 닮음은?",
+    "en": "Quiz 2 q21-2"
+   },
+   "page": "02_embedding",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-2-q22-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "임베딩에서 \"꿀잼\"과 \"노잼\"은 어떻게 놓이나?",
+    "en": "Quiz 2 q22-1"
+   },
+   "page": "02_embedding",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-2-q22-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "실제 임베딩 모델과 이 연구실 교육용 임베딩의 가장 큰 차이는?",
+    "en": "Quiz 2 q22-2"
+   },
+   "page": "02_embedding",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-2-q23-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "q = (0.8, 0.6), x = (0.6, 0.8)의 코사인은?",
+    "en": "Quiz 2 q23-1"
+   },
+   "page": "02_embedding",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-2-q23-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "모든 벡터를 길이 1로 맞추면?",
+    "en": "Quiz 2 q23-2"
+   },
+   "page": "02_embedding",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-2-q24-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "의미 검색에서 질문 문장은 어떻게 다루나?",
+    "en": "Quiz 2 q24-1"
+   },
+   "page": "02_embedding",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-2-q24-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "별점 1점인데 \"감동\" 검색 상위에 나온 리뷰를 걸러 내려면?",
+    "en": "Quiz 2 q24-2"
+   },
+   "page": "02_embedding",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  }
+ ],
+ "edges": [
+  {
+   "s": "lab:method/bag-of-words",
+   "p": "lab:broader",
+   "o": "lab:topic/word-embedding",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/embedding",
+   "p": "lab:broader",
+   "o": "lab:topic/word-embedding",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/sentence-embedding",
+   "p": "lab:broader",
+   "o": "lab:topic/embedding-space",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:metric/cosine",
+   "p": "lab:broader",
+   "o": "lab:topic/linear-algebra",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:metric/euclid-dot",
+   "p": "lab:broader",
+   "o": "lab:topic/linear-algebra",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/semantic-search",
+   "p": "lab:broader",
+   "o": "lab:topic/embedding-space",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/negation-sarcasm",
+   "p": "lab:broader",
+   "o": "lab:topic/embedding-space",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/bag-of-words",
+   "p": "lab:hasLimitation",
+   "o": "lab:limitation/negation-sarcasm",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/embedding",
+   "p": "lab:contrastsWith",
+   "o": "lab:method/bag-of-words",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/sentence-embedding",
+   "p": "lab:partOf",
+   "o": "lab:concept/embedding",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/semantic-search",
+   "p": "lab:measuredBy",
+   "o": "lab:metric/cosine",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:metric/euclid-dot",
+   "p": "lab:contrastsWith",
+   "o": "lab:metric/cosine",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/vector-f1",
+   "p": "lab:supports",
+   "o": "lab:method/semantic-search",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/semantic-search",
+   "p": "lab:hasLimitation",
+   "o": "lab:limitation/negation-sarcasm",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/cosine-beats-dot",
+   "p": "lab:supports",
+   "o": "lab:metric/cosine",
+   "anchor": "#duel",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:sim/v2-anatomy",
+   "p": "lab:demonstratedBy",
+   "o": "lab:concept/embedding",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/embedding",
+   "p": "lab:assertedIn",
+   "o": "lab:work/mikolov2013efficient",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/sentence-embedding",
+   "p": "lab:assertedIn",
+   "o": "lab:work/reimers2019sbert",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/vector-f1",
+   "p": "lab:assertedIn",
+   "o": "lab:work/ahn2026vdb",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/embedding",
+   "p": "lab:explainedIn",
+   "o": "lab:work/ahn2026nlp",
+   "anchor": "#export",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-2-q21-1",
+   "p": "lab:assesses",
+   "o": "lab:method/bag-of-words",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-2-q21-2",
+   "p": "lab:assesses",
+   "o": "lab:method/bag-of-words",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-2-q22-1",
+   "p": "lab:assesses",
+   "o": "lab:concept/embedding",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-2-q22-2",
+   "p": "lab:assesses",
+   "o": "lab:concept/embedding",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-2-q23-1",
+   "p": "lab:assesses",
+   "o": "lab:metric/cosine",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-2-q23-2",
+   "p": "lab:assesses",
+   "o": "lab:metric/cosine",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-2-q24-1",
+   "p": "lab:assesses",
+   "o": "lab:method/semantic-search",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-2-q24-2",
+   "p": "lab:assesses",
+   "o": "lab:method/semantic-search",
+   "anchor": "#s4",
+   "confidence": "high"
+  }
+ ]
+}

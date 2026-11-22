@@ -1,0 +1,158 @@
+[
+ {
+  "id": "ahn2026vdb",
+  "type": "dataset",
+  "title": "벡터 DB 연구실 가상 데이터 (영화 리뷰·SNS 글·랩플릭스 안내 문서·교육용 임베딩)",
+  "author": [
+   {
+    "family": "안",
+    "given": "상선"
+   }
+  ],
+  "publisher": "(주)M-Robo",
+  "URL": "https://github.com/adminmrobo/vector_db_lab",
+  "issued": {
+   "date-parts": [
+    [
+     2026
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/ahn2026vdb",
+   "role": "data",
+   "supports": [],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": true,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "이 저장소 code/make_data.py · code/lexicon.py",
+   "checkedSource": "repo"
+  }
+ },
+ {
+  "id": "lewis2020rag",
+  "type": "paper-conference",
+  "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+  "author": [
+   {
+    "family": "Lewis",
+    "given": "Patrick"
+   },
+   {
+    "family": "Perez",
+    "given": "Ethan"
+   },
+   {
+    "family": "Piktus",
+    "given": "Aleksandra"
+   }
+  ],
+  "container-title": "NeurIPS 2020",
+  "issued": {
+   "date-parts": [
+    [
+     2020
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/lewis2020rag",
+   "role": "method",
+   "supports": [],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": true,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "페이지 참고문헌 목록에서 옮김 (외부 대조 안 함)",
+   "checkedSource": "page"
+  }
+ },
+ {
+  "id": "robertson2009bm25",
+  "type": "article-journal",
+  "title": "The Probabilistic Relevance Framework: BM25 and Beyond",
+  "author": [
+   {
+    "family": "Robertson",
+    "given": "Stephen"
+   },
+   {
+    "family": "Zaragoza",
+    "given": "Hugo"
+   }
+  ],
+  "container-title": "Foundations and Trends in Information Retrieval",
+  "volume": "3",
+  "issue": "4",
+  "issued": {
+   "date-parts": [
+    [
+     2009
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/robertson2009bm25",
+   "role": "method",
+   "supports": [],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": true,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "페이지 참고문헌 목록에서 옮김 (외부 대조 안 함)",
+   "checkedSource": "page"
+  }
+ },
+ {
+  "id": "ahn2026nlp",
+  "type": "webpage",
+  "title": "인공지능과 자연어 데이터 분석 (강좌 사이트)",
+  "author": [
+   {
+    "family": "안",
+    "given": "상선"
+   }
+  ],
+  "publisher": "(주)M-Robo",
+  "URL": "https://adminmrobo.github.io/ai-nlp-data-analysis/",
+  "issued": {
+   "date-parts": [
+    [
+     2026
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/ahn2026nlp",
+   "role": "background",
+   "supports": [],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": true,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "사이트 확인 (2026-11-22)",
+   "checkedSource": "web"
+  }
+ }
+]

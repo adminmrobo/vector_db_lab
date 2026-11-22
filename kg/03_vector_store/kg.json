@@ -1,0 +1,717 @@
+{
+ "version": "1.0",
+ "page": "03_vector_store",
+ "nodes": [
+  {
+   "id": "lab:concept/vector-database",
+   "type": "Concept",
+   "label": {
+    "ko": "벡터 데이터베이스",
+    "en": "Vector database"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s1",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "좌표·메타데이터·원문 레코드와 ANN 색인"
+   }
+  },
+  {
+   "id": "lab:concept/vector-record",
+   "type": "Concept",
+   "label": {
+    "ko": "벡터 레코드와 저장 용량",
+    "en": "Vector record and storage"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "건수 × 차원 × 4바이트"
+   }
+  },
+  {
+   "id": "lab:method/quantization",
+   "type": "Method",
+   "label": {
+    "ko": "양자화 (PQ)",
+    "en": "Product quantization"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s1",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "좌표를 적은 바이트로 압축"
+   },
+   "source": [
+    {
+     "ref": "jegou2011pq",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:concept/ann",
+   "type": "Concept",
+   "label": {
+    "ko": "근사 최근접 이웃 검색 (ANN)",
+    "en": "Approximate nearest neighbor search"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "재현율을 조금 내주고 속도를 얻음"
+   }
+  },
+  {
+   "id": "lab:method/ivf",
+   "type": "Method",
+   "label": {
+    "ko": "서랍 색인 (IVF)",
+    "en": "Inverted file index"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "군집 서랍 몇 개만 열어 찾음"
+   },
+   "source": [
+    {
+     "ref": "johnson2021faiss",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:method/hnsw",
+   "type": "Method",
+   "label": {
+    "ko": "그래프 색인 (HNSW)",
+    "en": "HNSW graph index"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "위층 지름길, 아래층 이웃 길"
+   },
+   "source": [
+    {
+     "ref": "malkov2020hnsw",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:method/metadata-filter",
+   "type": "Method",
+   "label": {
+    "ko": "메타데이터 필터 (먼저/나중 거르기)",
+    "en": "Metadata filtering"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "좌표 검색에 표 조건을 함께"
+   }
+  },
+  {
+   "id": "lab:concept/hybrid-storage",
+   "type": "Concept",
+   "label": {
+    "ko": "관계형 DB와 벡터 DB의 역할 나누기 (pgvector)",
+    "en": "Relational + vector division of labor"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s5",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "사실은 표, 뜻은 벡터"
+   },
+   "source": [
+    {
+     "ref": "pgvector",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:claim/ivf-speed",
+   "type": "Claim",
+   "label": {
+    "ko": "점 5,000개에서 IVF nprobe 4: 재현율 99.8%, 비교 406번",
+    "en": "IVF trades little recall for speed"
+   },
+   "page": "03_vector_store",
+   "anchor": "#duel",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:limitation/post-filter-short",
+   "type": "Limitation",
+   "label": {
+    "ko": "찾은 뒤 거르기는 k개를 못 채울 수 있다",
+    "en": "Post-filtering may return fewer than k"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:sim/v3-graph",
+   "type": "Simulation",
+   "label": {
+    "ko": "길 찾기 그래프 실험장",
+    "en": "HNSW path lab"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/ahn2026vdb",
+   "type": "Work",
+   "label": {
+    "ko": "안 (2026) (주)M-Robo",
+    "en": "벡터 DB 연구실 가상 데이터 (영화 리뷰·SNS 글·랩플릭스 안내 문서·교육용 임베딩)"
+   },
+   "page": "03_vector_store",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/jegou2011pq",
+   "type": "Work",
+   "label": {
+    "ko": "Jégou 외 (2011) IEEE Transactions on Pattern Analysis and Machine Intelligence",
+    "en": "Product Quantization for Nearest Neighbor Search"
+   },
+   "page": "03_vector_store",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/malkov2020hnsw",
+   "type": "Work",
+   "label": {
+    "ko": "Malkov 외 (2020) IEEE Transactions on Pattern Analysis and Machine Intelligence",
+    "en": "Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs"
+   },
+   "page": "03_vector_store",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/johnson2021faiss",
+   "type": "Work",
+   "label": {
+    "ko": "Johnson 외 (2021) IEEE Transactions on Big Data",
+    "en": "Billion-scale Similarity Search with GPUs"
+   },
+   "page": "03_vector_store",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/pgvector",
+   "type": "Work",
+   "label": {
+    "ko": "Kane (n.d.) GitHub",
+    "en": "pgvector: Open-source vector similarity search for Postgres"
+   },
+   "page": "03_vector_store",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-3-q31-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "리뷰 100만 개 × 768차원 × 4바이트는 대략?",
+    "en": "Quiz 3 q31-1"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-3-q31-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "벡터 DB 레코드에서 메타데이터의 역할은?",
+    "en": "Quiz 3 q31-2"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-3-q32-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "서랍 색인(IVF)에서 nprobe를 늘리면?",
+    "en": "Quiz 3 q32-1"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-3-q32-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "N=5,000, 서랍 64개, nprobe 4일 때 비교 횟수 어림값은?",
+    "en": "Quiz 3 q32-2"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-3-q33-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "HNSW 위층(고속도로)의 역할은?",
+    "en": "Quiz 3 q33-1"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-3-q33-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "HNSW의 약점으로 맞는 것은?",
+    "en": "Quiz 3 q33-2"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-3-q34-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "\"찾은 뒤 거르기\"에서 결과가 k개보다 적게 나오는 이유는?",
+    "en": "Quiz 3 q34-1"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-3-q34-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "비꼬는 리뷰(별점 1점, \"감동이다 ^^\")를 걸러 내는 데 도움이 되는 것은?",
+    "en": "Quiz 3 q34-2"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-3-q35-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "결제 기록 저장에 알맞은 곳은?",
+    "en": "Quiz 3 q35-1"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s5",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-3-q35-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "pgvector는 무엇인가?",
+    "en": "Quiz 3 q35-2"
+   },
+   "page": "03_vector_store",
+   "anchor": "#s5",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  }
+ ],
+ "edges": [
+  {
+   "s": "lab:concept/vector-database",
+   "p": "lab:broader",
+   "o": "lab:topic/embedding-space",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/vector-record",
+   "p": "lab:broader",
+   "o": "lab:topic/deployment",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/quantization",
+   "p": "lab:broader",
+   "o": "lab:topic/deployment",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/ann",
+   "p": "lab:broader",
+   "o": "lab:topic/knn",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/ivf",
+   "p": "lab:broader",
+   "o": "lab:topic/knn",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/hnsw",
+   "p": "lab:broader",
+   "o": "lab:topic/knn",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/metadata-filter",
+   "p": "lab:broader",
+   "o": "lab:topic/deployment",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/hybrid-storage",
+   "p": "lab:broader",
+   "o": "lab:topic/deployment",
+   "anchor": "#s5",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/post-filter-short",
+   "p": "lab:broader",
+   "o": "lab:topic/deployment",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/vector-record",
+   "p": "lab:partOf",
+   "o": "lab:concept/vector-database",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/ivf",
+   "p": "lab:partOf",
+   "o": "lab:concept/ann",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/hnsw",
+   "p": "lab:partOf",
+   "o": "lab:concept/ann",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/hnsw",
+   "p": "lab:contrastsWith",
+   "o": "lab:method/ivf",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/ann",
+   "p": "lab:partOf",
+   "o": "lab:concept/vector-database",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/ivf-speed",
+   "p": "lab:supports",
+   "o": "lab:method/ivf",
+   "anchor": "#duel",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/metadata-filter",
+   "p": "lab:hasLimitation",
+   "o": "lab:limitation/post-filter-short",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/quantization",
+   "p": "lab:partOf",
+   "o": "lab:concept/vector-record",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/hybrid-storage",
+   "p": "lab:relatedTo",
+   "o": "lab:concept/vector-database",
+   "anchor": "#s5",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:sim/v3-graph",
+   "p": "lab:demonstratedBy",
+   "o": "lab:method/hnsw",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/quantization",
+   "p": "lab:assertedIn",
+   "o": "lab:work/jegou2011pq",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/ivf",
+   "p": "lab:assertedIn",
+   "o": "lab:work/johnson2021faiss",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/hnsw",
+   "p": "lab:assertedIn",
+   "o": "lab:work/malkov2020hnsw",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/hybrid-storage",
+   "p": "lab:assertedIn",
+   "o": "lab:work/pgvector",
+   "anchor": "#s5",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/vector-database",
+   "p": "lab:explainedIn",
+   "o": "lab:work/ahn2026vdb",
+   "anchor": "#export",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-3-q31-1",
+   "p": "lab:assesses",
+   "o": "lab:concept/vector-record",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-3-q31-2",
+   "p": "lab:assesses",
+   "o": "lab:concept/vector-record",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-3-q32-1",
+   "p": "lab:assesses",
+   "o": "lab:method/ivf",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-3-q32-2",
+   "p": "lab:assesses",
+   "o": "lab:method/ivf",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-3-q33-1",
+   "p": "lab:assesses",
+   "o": "lab:method/hnsw",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-3-q33-2",
+   "p": "lab:assesses",
+   "o": "lab:method/hnsw",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-3-q34-1",
+   "p": "lab:assesses",
+   "o": "lab:method/metadata-filter",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-3-q34-2",
+   "p": "lab:assesses",
+   "o": "lab:method/metadata-filter",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-3-q35-1",
+   "p": "lab:assesses",
+   "o": "lab:concept/hybrid-storage",
+   "anchor": "#s5",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-3-q35-2",
+   "p": "lab:assesses",
+   "o": "lab:concept/hybrid-storage",
+   "anchor": "#s5",
+   "confidence": "high"
+  }
+ ]
+}

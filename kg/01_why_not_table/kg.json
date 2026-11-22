@@ -1,0 +1,602 @@
+{
+ "version": "1.0",
+ "page": "01_why_not_table",
+ "nodes": [
+  {
+   "id": "lab:concept/relational-database",
+   "type": "Concept",
+   "label": {
+    "ko": "관계형 데이터베이스",
+    "en": "Relational database"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#s1",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "행과 열의 표, 키로 잇고 SQL로 묻는다"
+   },
+   "source": [
+    {
+     "ref": "ahn2026dbd",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:concept/structured-data",
+   "type": "Concept",
+   "label": {
+    "ko": "정형 데이터",
+    "en": "Structured data"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#s1",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "정해진 항목에 담기는 데이터"
+   }
+  },
+  {
+   "id": "lab:concept/unstructured-data",
+   "type": "Concept",
+   "label": {
+    "ko": "비정형 데이터",
+    "en": "Unstructured data"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#s4",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "정해진 항목이 없는 데이터 — 문장·사진·소리"
+   }
+  },
+  {
+   "id": "lab:method/sql-like",
+   "type": "Method",
+   "label": {
+    "ko": "SQL LIKE 검색",
+    "en": "SQL LIKE search"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "글자 일부가 들어 있는지 찾는 조건"
+   }
+  },
+  {
+   "id": "lab:metric/precision-recall",
+   "type": "Metric",
+   "label": {
+    "ko": "정밀도·재현율·F1",
+    "en": "Precision, recall, F1"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "헛걸음과 빠뜨림을 함께 보는 채점"
+   },
+   "source": [
+    {
+     "ref": "manning2008ir",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:claim/like-low-recall",
+   "type": "Claim",
+   "label": {
+    "ko": "LIKE '%재밌%'의 재현율 11.6% (정답 121개 중 14개)",
+    "en": "LIKE has low recall"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "ahn2026vdb",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:method/synonym-dictionary",
+   "type": "Method",
+   "label": {
+    "ko": "사람이 만든 동의어 사전·태그 규칙",
+    "en": "Hand-made synonym dictionary and tag rules"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "말투를 사람이 목록으로 관리"
+   }
+  },
+  {
+   "id": "lab:limitation/rule-taxonomy",
+   "type": "Limitation",
+   "label": {
+    "ko": "사람이 만든 체계는 새 말·새 주제에 늙는다",
+    "en": "Hand-made taxonomies age"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:concept/nl-characteristics",
+   "type": "Concept",
+   "label": {
+    "ko": "자연어 데이터의 아홉 가지 특징",
+    "en": "Nine characteristics of natural language data"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#s4",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "비정형·맥락·변화·단위 없음·어순·사전에 없는 말·같은 뜻 다른 표현·잡음·다의어"
+   },
+   "source": [
+    {
+     "ref": "ahn2026nlp",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:sim/v1-like",
+   "type": "Simulation",
+   "label": {
+    "ko": "LIKE 검색기",
+    "en": "LIKE search lab"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/ahn2026vdb",
+   "type": "Work",
+   "label": {
+    "ko": "안 (2026) (주)M-Robo",
+    "en": "벡터 DB 연구실 가상 데이터 (영화 리뷰·SNS 글·랩플릭스 안내 문서·교육용 임베딩)"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/ahn2026dbd",
+   "type": "Work",
+   "label": {
+    "ko": "안 (2026) (주)M-Robo",
+    "en": "데이터베이스 설계 (강좌 사이트)"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/ahn2026nlp",
+   "type": "Work",
+   "label": {
+    "ko": "안 (2026) (주)M-Robo",
+    "en": "인공지능과 자연어 데이터 분석 (강좌 사이트)"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/manning2008ir",
+   "type": "Work",
+   "label": {
+    "ko": "Manning 외 (2008) Cambridge University Press",
+    "en": "Introduction to Information Retrieval"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-1-q11-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "관계형 DB와 SQL이 가장 잘하는 일은?",
+    "en": "Quiz 1 q11-1"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-1-q11-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "벡터 DB를 쓰면 별점·날짜를 담은 표는 어떻게 되나?",
+    "en": "Quiz 1 q11-2"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-1-q12-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "LIKE로 찾은 17개 중 14개가 맞았고, 정답은 모두 121개다. 재현율은?",
+    "en": "Quiz 1 q12-1"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-1-q12-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "\"안 재밌어요\"가 LIKE '%재밌%'에 걸리는 이유는?",
+    "en": "Quiz 1 q12-2"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-1-q13-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "첫 주 글로 만든 태그 규칙이 둘째 주에 흔들린 가장 큰 이유는?",
+    "en": "Quiz 1 q13-1"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-1-q13-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "동의어 사전 LIKE의 F1이 꽤 높은데도 한계로 꼽히는 것은?",
+    "en": "Quiz 1 q13-2"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-1-q14-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "\"꿀잼\"과 \"시간 가는 줄 몰랐다\"처럼 글자는 안 겹치는데 뜻이 같은 경우는 어떤 특징인가?",
+    "en": "Quiz 1 q14-1"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-1-q14-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "\"배우가 아깝다\"가 \"돈 아깝다\" 검색에 섞여 들어오는 문제는?",
+    "en": "Quiz 1 q14-2"
+   },
+   "page": "01_why_not_table",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  }
+ ],
+ "edges": [
+  {
+   "s": "lab:concept/relational-database",
+   "p": "lab:broader",
+   "o": "lab:topic/deployment",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/structured-data",
+   "p": "lab:broader",
+   "o": "lab:topic/feature-engineering",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/unstructured-data",
+   "p": "lab:broader",
+   "o": "lab:topic/tokenization",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/sql-like",
+   "p": "lab:broader",
+   "o": "lab:topic/rule-vs-learning",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:metric/precision-recall",
+   "p": "lab:broader",
+   "o": "lab:topic/precision-recall",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/synonym-dictionary",
+   "p": "lab:broader",
+   "o": "lab:topic/rule-vs-learning",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/rule-taxonomy",
+   "p": "lab:broader",
+   "o": "lab:topic/rule-vs-learning",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/nl-characteristics",
+   "p": "lab:broader",
+   "o": "lab:topic/tokenization",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/relational-database",
+   "p": "lab:hasLimitation",
+   "o": "lab:concept/unstructured-data",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/sql-like",
+   "p": "lab:evaluatedBy",
+   "o": "lab:metric/precision-recall",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/like-low-recall",
+   "p": "lab:supports",
+   "o": "lab:method/sql-like",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/synonym-dictionary",
+   "p": "lab:hasLimitation",
+   "o": "lab:limitation/rule-taxonomy",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/structured-data",
+   "p": "lab:contrastsWith",
+   "o": "lab:concept/unstructured-data",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/nl-characteristics",
+   "p": "lab:partOf",
+   "o": "lab:concept/unstructured-data",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:sim/v1-like",
+   "p": "lab:demonstratedBy",
+   "o": "lab:method/sql-like",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/relational-database",
+   "p": "lab:assertedIn",
+   "o": "lab:work/ahn2026dbd",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:metric/precision-recall",
+   "p": "lab:assertedIn",
+   "o": "lab:work/manning2008ir",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/like-low-recall",
+   "p": "lab:assertedIn",
+   "o": "lab:work/ahn2026vdb",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/nl-characteristics",
+   "p": "lab:assertedIn",
+   "o": "lab:work/ahn2026nlp",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-1-q11-1",
+   "p": "lab:assesses",
+   "o": "lab:concept/relational-database",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-1-q11-2",
+   "p": "lab:assesses",
+   "o": "lab:concept/relational-database",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-1-q12-1",
+   "p": "lab:assesses",
+   "o": "lab:metric/precision-recall",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-1-q12-2",
+   "p": "lab:assesses",
+   "o": "lab:metric/precision-recall",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-1-q13-1",
+   "p": "lab:assesses",
+   "o": "lab:limitation/rule-taxonomy",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-1-q13-2",
+   "p": "lab:assesses",
+   "o": "lab:limitation/rule-taxonomy",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-1-q14-1",
+   "p": "lab:assesses",
+   "o": "lab:concept/nl-characteristics",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-1-q14-2",
+   "p": "lab:assesses",
+   "o": "lab:concept/nl-characteristics",
+   "anchor": "#s4",
+   "confidence": "high"
+  }
+ ]
+}

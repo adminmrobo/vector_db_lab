@@ -1,0 +1,478 @@
+{
+ "series": "vector_db_lab",
+ "date": "2026-11-22",
+ "new_ids": {
+  "lab:concept/vector-database": {
+   "label": {
+    "ko": "벡터 데이터베이스",
+    "en": "Vector database"
+   },
+   "type": "Concept",
+   "first_page": "index"
+  },
+  "lab:concept/relational-database": {
+   "label": {
+    "ko": "관계형 데이터베이스",
+    "en": "Relational database"
+   },
+   "type": "Concept",
+   "first_page": "index"
+  },
+  "lab:concept/embedding": {
+   "label": {
+    "ko": "임베딩",
+    "en": "Embedding"
+   },
+   "type": "Concept",
+   "first_page": "index"
+  },
+  "lab:method/rag": {
+   "label": {
+    "ko": "검색 증강 생성 (RAG)",
+    "en": "Retrieval-augmented generation"
+   },
+   "type": "Method",
+   "first_page": "index"
+  },
+  "lab:dataset/vdb-virtual": {
+   "label": {
+    "ko": "가상 영화 리뷰·SNS 글·랩플릭스 문서",
+    "en": "Virtual reviews, SNS posts and help docs"
+   },
+   "type": "Dataset",
+   "first_page": "index"
+  },
+  "lab:claim/vdb-duel-record": {
+   "label": {
+    "ko": "대결 전적 3승 2패 — 단순한 방법도 큰 방법도 늘 이기지 않는다",
+    "en": "Duel record 3-2"
+   },
+   "type": "Claim",
+   "first_page": "index"
+  },
+  "lab:question/where-meaning": {
+   "label": {
+    "ko": "리뷰와 SNS 글의 뜻은 어디에 어떻게 저장해야 찾을 수 있을까?",
+    "en": "Where to store meaning?"
+   },
+   "type": "Question",
+   "first_page": "index"
+  },
+  "lab:concept/structured-data": {
+   "label": {
+    "ko": "정형 데이터",
+    "en": "Structured data"
+   },
+   "type": "Concept",
+   "first_page": "01_why_not_table"
+  },
+  "lab:concept/unstructured-data": {
+   "label": {
+    "ko": "비정형 데이터",
+    "en": "Unstructured data"
+   },
+   "type": "Concept",
+   "first_page": "01_why_not_table"
+  },
+  "lab:method/sql-like": {
+   "label": {
+    "ko": "SQL LIKE 검색",
+    "en": "SQL LIKE search"
+   },
+   "type": "Method",
+   "first_page": "01_why_not_table"
+  },
+  "lab:metric/precision-recall": {
+   "label": {
+    "ko": "정밀도·재현율·F1",
+    "en": "Precision, recall, F1"
+   },
+   "type": "Metric",
+   "first_page": "01_why_not_table"
+  },
+  "lab:claim/like-low-recall": {
+   "label": {
+    "ko": "LIKE '%재밌%'의 재현율 11.6% (정답 121개 중 14개)",
+    "en": "LIKE has low recall"
+   },
+   "type": "Claim",
+   "first_page": "01_why_not_table"
+  },
+  "lab:method/synonym-dictionary": {
+   "label": {
+    "ko": "사람이 만든 동의어 사전·태그 규칙",
+    "en": "Hand-made synonym dictionary and tag rules"
+   },
+   "type": "Method",
+   "first_page": "01_why_not_table"
+  },
+  "lab:limitation/rule-taxonomy": {
+   "label": {
+    "ko": "사람이 만든 체계는 새 말·새 주제에 늙는다",
+    "en": "Hand-made taxonomies age"
+   },
+   "type": "Limitation",
+   "first_page": "01_why_not_table"
+  },
+  "lab:concept/nl-characteristics": {
+   "label": {
+    "ko": "자연어 데이터의 아홉 가지 특징",
+    "en": "Nine characteristics of natural language data"
+   },
+   "type": "Concept",
+   "first_page": "01_why_not_table"
+  },
+  "lab:sim/v1-like": {
+   "label": {
+    "ko": "LIKE 검색기",
+    "en": "LIKE search lab"
+   },
+   "type": "Simulation",
+   "first_page": "01_why_not_table"
+  },
+  "lab:method/bag-of-words": {
+   "label": {
+    "ko": "낱말 세기 (BoW)",
+    "en": "Bag of words"
+   },
+   "type": "Method",
+   "first_page": "02_embedding"
+  },
+  "lab:concept/sentence-embedding": {
+   "label": {
+    "ko": "문장 임베딩",
+    "en": "Sentence embedding"
+   },
+   "type": "Concept",
+   "first_page": "02_embedding"
+  },
+  "lab:metric/cosine": {
+   "label": {
+    "ko": "코사인 유사도",
+    "en": "Cosine similarity"
+   },
+   "type": "Metric",
+   "first_page": "02_embedding"
+  },
+  "lab:metric/euclid-dot": {
+   "label": {
+    "ko": "유클리드 거리·내적",
+    "en": "Euclidean distance and dot product"
+   },
+   "type": "Metric",
+   "first_page": "02_embedding"
+  },
+  "lab:method/semantic-search": {
+   "label": {
+    "ko": "의미 검색 (벡터 검색)",
+    "en": "Semantic search"
+   },
+   "type": "Method",
+   "first_page": "02_embedding"
+  },
+  "lab:claim/vector-f1": {
+   "label": {
+    "ko": "여덟 가지 뜻 F1 평균: LIKE 0.442, 사전 0.831, 좌표 0.842",
+    "en": "Mean F1 by method"
+   },
+   "type": "Claim",
+   "first_page": "02_embedding"
+  },
+  "lab:limitation/negation-sarcasm": {
+   "label": {
+    "ko": "부정어·비꼼은 좌표도 자주 놓친다",
+    "en": "Negation and sarcasm"
+   },
+   "type": "Limitation",
+   "first_page": "02_embedding"
+  },
+  "lab:claim/cosine-beats-dot": {
+   "label": {
+    "ko": "정규화 안 한 내적은 긴 리뷰를 올려 F1 평균 0.719 (코사인 0.842)",
+    "en": "Unnormalized dot favors long reviews"
+   },
+   "type": "Claim",
+   "first_page": "02_embedding"
+  },
+  "lab:sim/v2-anatomy": {
+   "label": {
+    "ko": "임베딩 해부실 + 낱말 지도",
+    "en": "Embedding anatomy lab"
+   },
+   "type": "Simulation",
+   "first_page": "02_embedding"
+  },
+  "lab:concept/vector-record": {
+   "label": {
+    "ko": "벡터 레코드와 저장 용량",
+    "en": "Vector record and storage"
+   },
+   "type": "Concept",
+   "first_page": "03_vector_store"
+  },
+  "lab:method/quantization": {
+   "label": {
+    "ko": "양자화 (PQ)",
+    "en": "Product quantization"
+   },
+   "type": "Method",
+   "first_page": "03_vector_store"
+  },
+  "lab:concept/ann": {
+   "label": {
+    "ko": "근사 최근접 이웃 검색 (ANN)",
+    "en": "Approximate nearest neighbor search"
+   },
+   "type": "Concept",
+   "first_page": "03_vector_store"
+  },
+  "lab:method/ivf": {
+   "label": {
+    "ko": "서랍 색인 (IVF)",
+    "en": "Inverted file index"
+   },
+   "type": "Method",
+   "first_page": "03_vector_store"
+  },
+  "lab:method/hnsw": {
+   "label": {
+    "ko": "그래프 색인 (HNSW)",
+    "en": "HNSW graph index"
+   },
+   "type": "Method",
+   "first_page": "03_vector_store"
+  },
+  "lab:method/metadata-filter": {
+   "label": {
+    "ko": "메타데이터 필터 (먼저/나중 거르기)",
+    "en": "Metadata filtering"
+   },
+   "type": "Method",
+   "first_page": "03_vector_store"
+  },
+  "lab:concept/hybrid-storage": {
+   "label": {
+    "ko": "관계형 DB와 벡터 DB의 역할 나누기 (pgvector)",
+    "en": "Relational + vector division of labor"
+   },
+   "type": "Concept",
+   "first_page": "03_vector_store"
+  },
+  "lab:claim/ivf-speed": {
+   "label": {
+    "ko": "점 5,000개에서 IVF nprobe 4: 재현율 99.8%, 비교 406번",
+    "en": "IVF trades little recall for speed"
+   },
+   "type": "Claim",
+   "first_page": "03_vector_store"
+  },
+  "lab:limitation/post-filter-short": {
+   "label": {
+    "ko": "찾은 뒤 거르기는 k개를 못 채울 수 있다",
+    "en": "Post-filtering may return fewer than k"
+   },
+   "type": "Limitation",
+   "first_page": "03_vector_store"
+  },
+  "lab:sim/v3-graph": {
+   "label": {
+    "ko": "길 찾기 그래프 실험장",
+    "en": "HNSW path lab"
+   },
+   "type": "Simulation",
+   "first_page": "03_vector_store"
+  },
+  "lab:concept/llm": {
+   "label": {
+    "ko": "대형 언어 모델 (다음 말 잇기)",
+    "en": "Large language model"
+   },
+   "type": "Concept",
+   "first_page": "04_llm_rag"
+  },
+  "lab:limitation/hallucination": {
+   "label": {
+    "ko": "환각 — 모르는 것도 그럴듯하게 지어냄",
+    "en": "Hallucination"
+   },
+   "type": "Limitation",
+   "first_page": "04_llm_rag"
+  },
+  "lab:method/chunking": {
+   "label": {
+    "ko": "청킹 (조각 크기·겹침)",
+    "en": "Chunking"
+   },
+   "type": "Method",
+   "first_page": "04_llm_rag"
+  },
+  "lab:method/bm25": {
+   "label": {
+    "ko": "BM25 (글자 점수)",
+    "en": "BM25"
+   },
+   "type": "Method",
+   "first_page": "04_llm_rag"
+  },
+  "lab:method/hybrid-search": {
+   "label": {
+    "ko": "하이브리드 검색 (α × 뜻 + (1−α) × 글자)",
+    "en": "Hybrid search"
+   },
+   "type": "Method",
+   "first_page": "04_llm_rag"
+  },
+  "lab:claim/hybrid-wins": {
+   "label": {
+    "ko": "k = 1에서 벡터만 10개, 섞기(α 0.3) 13개 맞힘 (질문 16개)",
+    "en": "Hybrid search answers more"
+   },
+   "type": "Claim",
+   "first_page": "04_llm_rag"
+  },
+  "lab:limitation/stale-docs": {
+   "label": {
+    "ko": "구버전 문서가 함께 찾아짐",
+    "en": "Stale documents retrieved"
+   },
+   "type": "Limitation",
+   "first_page": "04_llm_rag"
+  },
+  "lab:method/date-filter": {
+   "label": {
+    "ko": "날짜·버전 필터와 출처 표시",
+    "en": "Date filter and citations"
+   },
+   "type": "Method",
+   "first_page": "04_llm_rag"
+  },
+  "lab:sim/v4-rag": {
+   "label": {
+    "ko": "RAG 시뮬레이터",
+    "en": "RAG simulator"
+   },
+   "type": "Simulation",
+   "first_page": "04_llm_rag"
+  },
+  "lab:method/content-recommend": {
+   "label": {
+    "ko": "리뷰 좌표 평균으로 하는 콘텐츠 추천",
+    "en": "Content recommendation from review embeddings"
+   },
+   "type": "Method",
+   "first_page": "05_cases"
+  },
+  "lab:limitation/cold-start": {
+   "label": {
+    "ko": "콜드 스타트",
+    "en": "Cold start"
+   },
+   "type": "Limitation",
+   "first_page": "05_cases"
+  },
+  "lab:method/spam-novelty": {
+   "label": {
+    "ko": "광고 걸러내기와 새 이야기 알림",
+    "en": "Spam filtering and novelty alert"
+   },
+   "type": "Method",
+   "first_page": "05_cases"
+  },
+  "lab:claim/spam-f1": {
+   "label": {
+    "ko": "둘째 주 광고 걸러내기 F1: 글자 겹침 0.818, 좌표 0.963",
+    "en": "Embedding spam filter F1"
+   },
+   "type": "Claim",
+   "first_page": "05_cases"
+  },
+  "lab:method/chat-memory": {
+   "label": {
+    "ko": "대화 기억 창고 (장기 기억)",
+    "en": "Conversation memory store"
+   },
+   "type": "Method",
+   "first_page": "05_cases"
+  },
+  "lab:limitation/embedding-privacy": {
+   "label": {
+    "ko": "좌표에서 원문이 되살아날 수 있음 — 좌표도 원문처럼 보호",
+    "en": "Embedding inversion risk"
+   },
+   "type": "Limitation",
+   "first_page": "05_cases"
+  },
+  "lab:method/adoption-check": {
+   "label": {
+    "ko": "벡터 DB 도입 판단 다섯 질문",
+    "en": "Adoption checklist"
+   },
+   "type": "Method",
+   "first_page": "05_cases"
+  },
+  "lab:concept/multimodal-embedding": {
+   "label": {
+    "ko": "글과 그림을 같은 좌표에 (CLIP)",
+    "en": "Multimodal embedding"
+   },
+   "type": "Concept",
+   "first_page": "05_cases"
+  },
+  "lab:sim/v5-sns": {
+   "label": {
+    "ko": "SNS 상황실",
+    "en": "SNS monitoring lab"
+   },
+   "type": "Simulation",
+   "first_page": "05_cases"
+  },
+  "lab:sim/practice-search": {
+   "label": {
+    "ko": "리뷰 검색 창구",
+    "en": "Review search desk"
+   },
+   "type": "Simulation",
+   "first_page": "practice/index"
+  },
+  "lab:sim/practice-rag": {
+   "label": {
+    "ko": "고객센터 RAG 창구",
+    "en": "RAG help desk"
+   },
+   "type": "Simulation",
+   "first_page": "practice/index"
+  },
+  "lab:sim/practice-sns": {
+   "label": {
+    "ko": "SNS 상황실",
+    "en": "SNS room"
+   },
+   "type": "Simulation",
+   "first_page": "practice/index"
+  },
+  "lab:sim/practice-store": {
+   "label": {
+    "ko": "창고 관리실",
+    "en": "Index room"
+   },
+   "type": "Simulation",
+   "first_page": "practice/index"
+  },
+  "lab:question/robust-setting": {
+   "label": {
+    "ko": "조건이 바뀌어도 고른 설정의 점수가 유지되나?",
+    "en": "Is the setting robust?"
+   },
+   "type": "Question",
+   "first_page": "practice/index"
+  },
+  "lab:limitation/tradeoffs": {
+   "label": {
+    "ko": "한쪽을 얻으면 다른 쪽을 내주는 맞바꿈",
+    "en": "Trade-offs"
+   },
+   "type": "Limitation",
+   "first_page": "practice/index"
+  }
+ }
+}

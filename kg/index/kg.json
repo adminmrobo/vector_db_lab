@@ -1,0 +1,291 @@
+{
+ "version": "1.0",
+ "page": "index",
+ "nodes": [
+  {
+   "id": "lab:concept/vector-database",
+   "type": "Concept",
+   "label": {
+    "ko": "벡터 데이터베이스",
+    "en": "Vector database"
+   },
+   "page": "index",
+   "anchor": "#first",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "뜻을 담은 좌표와 메타데이터를 저장하고 가까운 좌표를 빨리 찾는 데이터베이스"
+   }
+  },
+  {
+   "id": "lab:concept/relational-database",
+   "type": "Concept",
+   "label": {
+    "ko": "관계형 데이터베이스",
+    "en": "Relational database"
+   },
+   "page": "index",
+   "anchor": "#first",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "행과 열의 표와 SQL"
+   }
+  },
+  {
+   "id": "lab:concept/embedding",
+   "type": "Concept",
+   "label": {
+    "ko": "임베딩",
+    "en": "Embedding"
+   },
+   "page": "index",
+   "anchor": "#picture",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "뜻을 숫자 좌표로 바꾼 것"
+   }
+  },
+  {
+   "id": "lab:method/rag",
+   "type": "Method",
+   "label": {
+    "ko": "검색 증강 생성 (RAG)",
+    "en": "Retrieval-augmented generation"
+   },
+   "page": "index",
+   "anchor": "#picture",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "찾은 근거를 붙여 LLM이 답하게 함"
+   }
+  },
+  {
+   "id": "lab:dataset/vdb-virtual",
+   "type": "Dataset",
+   "label": {
+    "ko": "가상 영화 리뷰·SNS 글·랩플릭스 문서",
+    "en": "Virtual reviews, SNS posts and help docs"
+   },
+   "page": "index",
+   "anchor": "#data",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "이 연구실이 만든 설명용 데이터"
+   },
+   "source": [
+    {
+     "ref": "ahn2026vdb",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:claim/vdb-duel-record",
+   "type": "Claim",
+   "label": {
+    "ko": "대결 전적 3승 2패 — 단순한 방법도 큰 방법도 늘 이기지 않는다",
+    "en": "Duel record 3-2"
+   },
+   "page": "index",
+   "anchor": "#record",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:question/where-meaning",
+   "type": "Question",
+   "label": {
+    "ko": "리뷰와 SNS 글의 뜻은 어디에 어떻게 저장해야 찾을 수 있을까?",
+    "en": "Where to store meaning?"
+   },
+   "page": "index",
+   "anchor": "#first",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/ahn2026vdb",
+   "type": "Work",
+   "label": {
+    "ko": "안 (2026) (주)M-Robo",
+    "en": "벡터 DB 연구실 가상 데이터 (영화 리뷰·SNS 글·랩플릭스 안내 문서·교육용 임베딩)"
+   },
+   "page": "index",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/ahn2026dbd",
+   "type": "Work",
+   "label": {
+    "ko": "안 (2026) (주)M-Robo",
+    "en": "데이터베이스 설계 (강좌 사이트)"
+   },
+   "page": "index",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/ahn2026nlp",
+   "type": "Work",
+   "label": {
+    "ko": "안 (2026) (주)M-Robo",
+    "en": "인공지능과 자연어 데이터 분석 (강좌 사이트)"
+   },
+   "page": "index",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  }
+ ],
+ "edges": [
+  {
+   "s": "lab:concept/vector-database",
+   "p": "lab:broader",
+   "o": "lab:topic/embedding-space",
+   "anchor": "#first",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/relational-database",
+   "p": "lab:broader",
+   "o": "lab:topic/deployment",
+   "anchor": "#first",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/embedding",
+   "p": "lab:broader",
+   "o": "lab:topic/word-embedding",
+   "anchor": "#picture",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/rag",
+   "p": "lab:broader",
+   "o": "lab:topic/rag",
+   "anchor": "#picture",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/vector-database",
+   "p": "lab:contrastsWith",
+   "o": "lab:concept/relational-database",
+   "anchor": "#first",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/embedding",
+   "p": "lab:prerequisiteOf",
+   "o": "lab:concept/vector-database",
+   "anchor": "#picture",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/rag",
+   "p": "lab:derivedFrom",
+   "o": "lab:concept/vector-database",
+   "anchor": "#picture",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/vector-database",
+   "p": "lab:evaluatedOn",
+   "o": "lab:dataset/vdb-virtual",
+   "anchor": "#data",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/vdb-duel-record",
+   "p": "lab:supports",
+   "o": "lab:concept/vector-database",
+   "anchor": "#record",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:question/where-meaning",
+   "p": "lab:addressedBy",
+   "o": "lab:concept/vector-database",
+   "anchor": "#first",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:dataset/vdb-virtual",
+   "p": "lab:assertedIn",
+   "o": "lab:work/ahn2026vdb",
+   "anchor": "#data",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/vector-database",
+   "p": "lab:explainedIn",
+   "o": "lab:work/ahn2026dbd",
+   "anchor": "#export",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/vector-database",
+   "p": "lab:explainedIn",
+   "o": "lab:work/ahn2026nlp",
+   "anchor": "#export",
+   "confidence": "high"
+  }
+ ]
+}

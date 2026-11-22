@@ -1,0 +1,213 @@
+{
+ "version": "1.0",
+ "page": "practice/index",
+ "nodes": [
+  {
+   "id": "lab:sim/practice-search",
+   "type": "Simulation",
+   "label": {
+    "ko": "리뷰 검색 창구",
+    "en": "Review search desk"
+   },
+   "page": "practice/index",
+   "anchor": "#search",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "방식·개수·별점 조건으로 F1 맞추기"
+   }
+  },
+  {
+   "id": "lab:sim/practice-rag",
+   "type": "Simulation",
+   "label": {
+    "ko": "고객센터 RAG 창구",
+    "en": "RAG help desk"
+   },
+   "page": "practice/index",
+   "anchor": "#rag",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "조각·k·α·문턱·날짜 필터"
+   }
+  },
+  {
+   "id": "lab:sim/practice-sns",
+   "type": "Simulation",
+   "label": {
+    "ko": "SNS 상황실",
+    "en": "SNS room"
+   },
+   "page": "practice/index",
+   "anchor": "#sns",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "광고 문턱·묶음 닮음·알림 기준"
+   }
+  },
+  {
+   "id": "lab:sim/practice-store",
+   "type": "Simulation",
+   "label": {
+    "ko": "창고 관리실",
+    "en": "Index room"
+   },
+   "page": "practice/index",
+   "anchor": "#store",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "전수·IVF·HNSW의 재현율과 비교 횟수"
+   }
+  },
+  {
+   "id": "lab:question/robust-setting",
+   "type": "Question",
+   "label": {
+    "ko": "조건이 바뀌어도 고른 설정의 점수가 유지되나?",
+    "en": "Is the setting robust?"
+   },
+   "page": "practice/index",
+   "anchor": "#close",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:limitation/tradeoffs",
+   "type": "Limitation",
+   "label": {
+    "ko": "한쪽을 얻으면 다른 쪽을 내주는 맞바꿈",
+    "en": "Trade-offs"
+   },
+   "page": "practice/index",
+   "anchor": "#close",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/ahn2026vdb",
+   "type": "Work",
+   "label": {
+    "ko": "안 (2026) (주)M-Robo",
+    "en": "벡터 DB 연구실 가상 데이터 (영화 리뷰·SNS 글·랩플릭스 안내 문서·교육용 임베딩)"
+   },
+   "page": "practice/index",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  }
+ ],
+ "edges": [
+  {
+   "s": "lab:sim/practice-search",
+   "p": "lab:demonstratedBy",
+   "o": "lab:topic/precision-recall",
+   "anchor": "#search",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:sim/practice-rag",
+   "p": "lab:demonstratedBy",
+   "o": "lab:topic/rag",
+   "anchor": "#rag",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:sim/practice-sns",
+   "p": "lab:demonstratedBy",
+   "o": "lab:topic/anomaly-detection",
+   "anchor": "#sns",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:sim/practice-store",
+   "p": "lab:demonstratedBy",
+   "o": "lab:topic/knn",
+   "anchor": "#store",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/tradeoffs",
+   "p": "lab:broader",
+   "o": "lab:topic/deployment",
+   "anchor": "#close",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:question/robust-setting",
+   "p": "lab:addressedBy",
+   "o": "lab:sim/practice-search",
+   "anchor": "#close",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:question/robust-setting",
+   "p": "lab:addressedBy",
+   "o": "lab:sim/practice-rag",
+   "anchor": "#close",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:question/robust-setting",
+   "p": "lab:addressedBy",
+   "o": "lab:sim/practice-store",
+   "anchor": "#close",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:sim/practice-sns",
+   "p": "lab:raises",
+   "o": "lab:limitation/tradeoffs",
+   "anchor": "#sns",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:sim/practice-rag",
+   "p": "lab:explainedIn",
+   "o": "lab:work/ahn2026vdb",
+   "anchor": "#export",
+   "confidence": "high"
+  }
+ ]
+}

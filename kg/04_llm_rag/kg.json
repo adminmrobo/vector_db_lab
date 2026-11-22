@@ -1,0 +1,648 @@
+{
+ "version": "1.0",
+ "page": "04_llm_rag",
+ "nodes": [
+  {
+   "id": "lab:concept/llm",
+   "type": "Concept",
+   "label": {
+    "ko": "대형 언어 모델 (다음 말 잇기)",
+    "en": "Large language model"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#s1",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "앞말이 주어졌을 때 다음 말의 확률로 문장을 이어 씀"
+   }
+  },
+  {
+   "id": "lab:limitation/hallucination",
+   "type": "Limitation",
+   "label": {
+    "ko": "환각 — 모르는 것도 그럴듯하게 지어냄",
+    "en": "Hallucination"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:method/rag",
+   "type": "Method",
+   "label": {
+    "ko": "검색 증강 생성 (RAG)",
+    "en": "Retrieval-augmented generation"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#s2",
+   "level": 1,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "근거 조각을 찾아 붙이고 자료로만 답하게 함"
+   },
+   "source": [
+    {
+     "ref": "lewis2020rag",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:method/chunking",
+   "type": "Method",
+   "label": {
+    "ko": "청킹 (조각 크기·겹침)",
+    "en": "Chunking"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "문장 단위로 목표 글자 수까지 모음"
+   }
+  },
+  {
+   "id": "lab:method/bm25",
+   "type": "Method",
+   "label": {
+    "ko": "BM25 (글자 점수)",
+    "en": "BM25"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "낱말 일치 빈도와 드묾으로 점수"
+   },
+   "source": [
+    {
+     "ref": "robertson2009bm25",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:method/hybrid-search",
+   "type": "Method",
+   "label": {
+    "ko": "하이브리드 검색 (α × 뜻 + (1−α) × 글자)",
+    "en": "Hybrid search"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "뜻 점수와 글자 점수를 섞음"
+   }
+  },
+  {
+   "id": "lab:claim/hybrid-wins",
+   "type": "Claim",
+   "label": {
+    "ko": "k = 1에서 벡터만 10개, 섞기(α 0.3) 13개 맞힘 (질문 16개)",
+    "en": "Hybrid search answers more"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#duel",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "ahn2026vdb",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:limitation/stale-docs",
+   "type": "Limitation",
+   "label": {
+    "ko": "구버전 문서가 함께 찾아짐",
+    "en": "Stale documents retrieved"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#s5",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:method/date-filter",
+   "type": "Method",
+   "label": {
+    "ko": "날짜·버전 필터와 출처 표시",
+    "en": "Date filter and citations"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#s5",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:sim/v4-rag",
+   "type": "Simulation",
+   "label": {
+    "ko": "RAG 시뮬레이터",
+    "en": "RAG simulator"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/ahn2026vdb",
+   "type": "Work",
+   "label": {
+    "ko": "안 (2026) (주)M-Robo",
+    "en": "벡터 DB 연구실 가상 데이터 (영화 리뷰·SNS 글·랩플릭스 안내 문서·교육용 임베딩)"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/lewis2020rag",
+   "type": "Work",
+   "label": {
+    "ko": "Lewis 외 (2020) NeurIPS 2020",
+    "en": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/robertson2009bm25",
+   "type": "Work",
+   "label": {
+    "ko": "Robertson 외 (2009) Foundations and Trends in Information Retrieval",
+    "en": "The Probabilistic Relevance Framework: BM25 and Beyond"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/ahn2026nlp",
+   "type": "Work",
+   "label": {
+    "ko": "안 (2026) (주)M-Robo",
+    "en": "인공지능과 자연어 데이터 분석 (강좌 사이트)"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-4-q41-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "LLM이 가상 회사 랩플릭스의 요금을 틀리게 답한 가장 큰 이유는?",
+    "en": "Quiz 4 q41-1"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-4-q41-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "\"연기\" 뒤에 온 말 29번 중 \"차력쇼\"가 17번이면 P(차력쇼 | 연기)는?",
+    "en": "Quiz 4 q41-2"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-4-q42-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "RAG에서 \"근거 문턱\"을 너무 낮추면?",
+    "en": "Quiz 4 q42-1"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-4-q42-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "프롬프트에 찾은 조각의 제목·날짜를 함께 넣는 이유는?",
+    "en": "Quiz 4 q42-2"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-4-q43-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "조각을 너무 잘게 자를 때의 위험은?",
+    "en": "Quiz 4 q43-1"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-4-q43-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "k = 3, 조각 200자면 LLM에게 넘기는 글은 대략?",
+    "en": "Quiz 4 q43-2"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-4-q44-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "\"LP-204\"처럼 코드가 든 질문에 하이브리드 검색이 유리한 이유는?",
+    "en": "Quiz 4 q44-1"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-4-q44-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "α = 1이면?",
+    "en": "Quiz 4 q44-2"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-4-q45-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "옛 환불 규정 문서가 함께 찾아지는 문제를 막는 기본 방법은?",
+    "en": "Quiz 4 q45-1"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#s5",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-4-q45-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "사내 기밀 문서를 RAG에 넣을 때 함께 걸어야 할 조건은?",
+    "en": "Quiz 4 q45-2"
+   },
+   "page": "04_llm_rag",
+   "anchor": "#s5",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  }
+ ],
+ "edges": [
+  {
+   "s": "lab:concept/llm",
+   "p": "lab:broader",
+   "o": "lab:topic/pretrained-lm",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/hallucination",
+   "p": "lab:broader",
+   "o": "lab:topic/pretrained-lm",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/rag",
+   "p": "lab:broader",
+   "o": "lab:topic/rag",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/chunking",
+   "p": "lab:broader",
+   "o": "lab:topic/rag",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/bm25",
+   "p": "lab:broader",
+   "o": "lab:topic/rag",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/hybrid-search",
+   "p": "lab:broader",
+   "o": "lab:topic/rag",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/stale-docs",
+   "p": "lab:broader",
+   "o": "lab:topic/rag",
+   "anchor": "#s5",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/date-filter",
+   "p": "lab:broader",
+   "o": "lab:topic/rag",
+   "anchor": "#s5",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/llm",
+   "p": "lab:hasLimitation",
+   "o": "lab:limitation/hallucination",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/hallucination",
+   "p": "lab:addressedBy",
+   "o": "lab:method/rag",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/chunking",
+   "p": "lab:partOf",
+   "o": "lab:method/rag",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/hybrid-search",
+   "p": "lab:partOf",
+   "o": "lab:method/rag",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/bm25",
+   "p": "lab:partOf",
+   "o": "lab:method/hybrid-search",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/hybrid-wins",
+   "p": "lab:supports",
+   "o": "lab:method/hybrid-search",
+   "anchor": "#duel",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/rag",
+   "p": "lab:hasLimitation",
+   "o": "lab:limitation/stale-docs",
+   "anchor": "#s5",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/stale-docs",
+   "p": "lab:addressedBy",
+   "o": "lab:method/date-filter",
+   "anchor": "#s5",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:sim/v4-rag",
+   "p": "lab:demonstratedBy",
+   "o": "lab:method/rag",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/rag",
+   "p": "lab:assertedIn",
+   "o": "lab:work/lewis2020rag",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/bm25",
+   "p": "lab:assertedIn",
+   "o": "lab:work/robertson2009bm25",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/hybrid-wins",
+   "p": "lab:assertedIn",
+   "o": "lab:work/ahn2026vdb",
+   "anchor": "#duel",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/rag",
+   "p": "lab:explainedIn",
+   "o": "lab:work/ahn2026nlp",
+   "anchor": "#export",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-4-q41-1",
+   "p": "lab:assesses",
+   "o": "lab:concept/llm",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-4-q41-2",
+   "p": "lab:assesses",
+   "o": "lab:concept/llm",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-4-q42-1",
+   "p": "lab:assesses",
+   "o": "lab:method/rag",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-4-q42-2",
+   "p": "lab:assesses",
+   "o": "lab:method/rag",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-4-q43-1",
+   "p": "lab:assesses",
+   "o": "lab:method/chunking",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-4-q43-2",
+   "p": "lab:assesses",
+   "o": "lab:method/chunking",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-4-q44-1",
+   "p": "lab:assesses",
+   "o": "lab:method/hybrid-search",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-4-q44-2",
+   "p": "lab:assesses",
+   "o": "lab:method/hybrid-search",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-4-q45-1",
+   "p": "lab:assesses",
+   "o": "lab:limitation/stale-docs",
+   "anchor": "#s5",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-4-q45-2",
+   "p": "lab:assesses",
+   "o": "lab:limitation/stale-docs",
+   "anchor": "#s5",
+   "confidence": "high"
+  }
+ ]
+}

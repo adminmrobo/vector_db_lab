@@ -1,0 +1,182 @@
+[
+ {
+  "id": "ahn2026vdb",
+  "type": "dataset",
+  "title": "벡터 DB 연구실 가상 데이터 (영화 리뷰·SNS 글·랩플릭스 안내 문서·교육용 임베딩)",
+  "author": [
+   {
+    "family": "안",
+    "given": "상선"
+   }
+  ],
+  "publisher": "(주)M-Robo",
+  "URL": "https://github.com/adminmrobo/vector_db_lab",
+  "issued": {
+   "date-parts": [
+    [
+     2026
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/ahn2026vdb",
+   "role": "data",
+   "supports": [],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": true,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "이 저장소 code/make_data.py · code/lexicon.py",
+   "checkedSource": "repo"
+  }
+ },
+ {
+  "id": "spotify_annoy",
+  "type": "software",
+  "title": "Annoy: Approximate Nearest Neighbors Oh Yeah",
+  "author": [
+   {
+    "family": "Spotify",
+    "given": ""
+   }
+  ],
+  "publisher": "GitHub",
+  "URL": "https://github.com/spotify/annoy",
+  "lab": {
+   "work": "lab:work/spotify_annoy",
+   "role": "background",
+   "supports": [],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": false,
+    "container": true,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "README Background 절 (2026-11-22 확인)",
+   "checkedSource": "web"
+  }
+ },
+ {
+  "id": "radford2021clip",
+  "type": "paper-conference",
+  "title": "Learning Transferable Visual Models From Natural Language Supervision",
+  "author": [
+   {
+    "family": "Radford",
+    "given": "Alec"
+   },
+   {
+    "family": "Kim",
+    "given": "Jong Wook"
+   }
+  ],
+  "container-title": "ICML 2021",
+  "issued": {
+   "date-parts": [
+    [
+     2021
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/radford2021clip",
+   "role": "background",
+   "supports": [],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": true,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "페이지 참고문헌 목록에서 옮김 (외부 대조 안 함)",
+   "checkedSource": "page"
+  }
+ },
+ {
+  "id": "morris2023inversion",
+  "type": "paper-conference",
+  "title": "Text Embeddings Reveal (Almost) As Much As Text",
+  "author": [
+   {
+    "family": "Morris",
+    "given": "John X."
+   },
+   {
+    "family": "Kuleshov",
+    "given": "Volodymyr"
+   },
+   {
+    "family": "Shmatikov",
+    "given": "Vitaly"
+   },
+   {
+    "family": "Rush",
+    "given": "Alexander M."
+   }
+  ],
+  "container-title": "EMNLP 2023",
+  "issued": {
+   "date-parts": [
+    [
+     2023
+    ]
+   ]
+  },
+  "lab": {
+   "work": "lab:work/morris2023inversion",
+   "role": "background",
+   "supports": [],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": true,
+    "year": true,
+    "container": true,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "페이지 참고문헌 목록에서 옮김 (외부 대조 안 함)",
+   "checkedSource": "page"
+  }
+ },
+ {
+  "id": "pgvector",
+  "type": "software",
+  "title": "pgvector: Open-source vector similarity search for Postgres",
+  "author": [
+   {
+    "family": "Kane",
+    "given": "Andrew"
+   }
+  ],
+  "publisher": "GitHub",
+  "URL": "https://github.com/pgvector/pgvector",
+  "lab": {
+   "work": "lab:work/pgvector",
+   "role": "background",
+   "supports": [],
+   "locs": [],
+   "verified": {
+    "title": true,
+    "author": false,
+    "year": false,
+    "container": true,
+    "pages": false,
+    "doi": false
+   },
+   "checkedBy": "페이지 참고문헌 목록에서 옮김 (외부 대조 안 함)",
+   "checkedSource": "page"
+  }
+ }
+]

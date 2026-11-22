@@ -1,0 +1,38 @@
+{
+ "title": "마지막 장 · 실전 연습장 — 랩플릭스 운영실",
+ "number": "6",
+ "series": "벡터 DB 연구실 (vector_db_lab)",
+ "about": [
+  "lab:sim/practice-rag"
+ ],
+ "basedOn": [
+  "ahn2026vdb"
+ ],
+ "educationalLevel": "입문",
+ "creator": [
+  {
+   "name": "안상선",
+   "role": "author"
+  }
+ ],
+ "contributor": [
+  {
+   "name": "AI 보조 제작",
+   "role": "assistant"
+  }
+ ],
+ "date": "2026-11-22",
+ "version": "1.0",
+ "language": [
+  "ko"
+ ],
+ "license": "",
+ "url": "https://adminmrobo.github.io/vector_db_lab/practice/",
+ "registry": "KG_00_registry 0.2",
+ "learningResourceType": "interactive explainer",
+ "seeAlso": "",
+ "domain": [
+  "ai"
+ ],
+ "suggestedCitation": "안상선 (2026). 마지막 장 · 실전 연습장 — 랩플릭스 운영실. 벡터 DB 연구실 (vector_db_lab) 6, v1.0."
+}

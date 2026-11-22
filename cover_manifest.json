@@ -1,0 +1,490 @@
+{
+ "series_ko": "AI 응용 · 벡터 DB",
+ "title_ko": "벡터 DB 연구실 (vector_db_lab) — 표에 담기지 않는 말을 저장하는 법",
+ "site_title": "벡터 DB 연구실 — 표에 담기지 않는 말을 저장하는 법 (목차)",
+ "site_url": "https://adminmrobo.github.io/vector_db_lab/",
+ "ontology": {
+  "pages": [
+   {
+    "path": "index.html",
+    "kg": true,
+    "export": true
+   },
+   {
+    "path": "01_why_not_table.html",
+    "kg": true,
+    "export": true
+   },
+   {
+    "path": "02_embedding.html",
+    "kg": true,
+    "export": true
+   },
+   {
+    "path": "03_vector_store.html",
+    "kg": true,
+    "export": true
+   },
+   {
+    "path": "04_llm_rag.html",
+    "kg": true,
+    "export": true
+   },
+   {
+    "path": "05_cases.html",
+    "kg": true,
+    "export": true
+   },
+   {
+    "path": "practice/index.html",
+    "kg": true,
+    "export": true
+   }
+  ],
+  "files": [
+   "kg/index/kg.json",
+   "kg/01_why_not_table/kg.json",
+   "kg/02_embedding/kg.json",
+   "kg/03_vector_store/kg.json",
+   "kg/04_llm_rag/kg.json",
+   "kg/05_cases/kg.json",
+   "kg/practice/kg.json"
+  ]
+ },
+ "i18n": {
+  "langs": [
+   "ko"
+  ],
+  "pages": {
+   "ko": 7
+  },
+  "readme_langs": [
+   "ko"
+  ]
+ },
+ "languages": [
+  "ko"
+ ],
+ "items": [
+  {
+   "id": "cover_00",
+   "role": "cover",
+   "page": "index.html",
+   "path": "img/cover_00.webp",
+   "size": [
+    1600,
+    900
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "sia",
+    "moa",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": "see docs/COVER_PROMPTS_vector_db_lab.md#cover_00",
+   "source_of": null,
+   "status": "missing",
+   "alt_ko": "조수(하루)가 칠판 앞에서 첫 강의를 하고 인턴 둘과 식구들이 지켜보는 장면"
+  },
+  {
+   "id": "thumb_00",
+   "role": "thumb",
+   "path": "img/thumb_00.webp",
+   "size": [
+    1200,
+    800
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "sia",
+    "moa",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": null,
+   "source_of": "cover_00",
+   "status": "missing"
+  },
+  {
+   "id": "og_00",
+   "role": "og",
+   "path": "img/og_00.webp",
+   "size": [
+    1200,
+    630
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "sia",
+    "moa",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": null,
+   "source_of": "cover_00",
+   "status": "missing"
+  },
+  {
+   "id": "cover_01",
+   "role": "cover",
+   "page": "01_why_not_table.html",
+   "path": "img/cover_01.webp",
+   "size": [
+    1600,
+    900
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": "see docs/COVER_PROMPTS_vector_db_lab.md#cover_01",
+   "source_of": null,
+   "status": "missing",
+   "alt_ko": "별점 카드는 서랍장에 잘 들어가고, 말풍선 종이는 넘쳐 흐르는 자료실"
+  },
+  {
+   "id": "thumb_01",
+   "role": "thumb",
+   "path": "img/thumb_01.webp",
+   "size": [
+    1200,
+    800
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": null,
+   "source_of": "cover_01",
+   "status": "missing"
+  },
+  {
+   "id": "og_01",
+   "role": "og",
+   "path": "img/og_01.webp",
+   "size": [
+    1200,
+    630
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": null,
+   "source_of": "cover_01",
+   "status": "missing"
+  },
+  {
+   "id": "cover_02",
+   "role": "cover",
+   "page": "02_embedding.html",
+   "path": "img/cover_02.webp",
+   "size": [
+    1600,
+    900
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": "see docs/COVER_PROMPTS_vector_db_lab.md#cover_02",
+   "source_of": null,
+   "status": "missing",
+   "alt_ko": "말풍선이 모눈 위 좌표 점으로 내려앉고 각도기로 화살표 각도를 재는 장면"
+  },
+  {
+   "id": "thumb_02",
+   "role": "thumb",
+   "path": "img/thumb_02.webp",
+   "size": [
+    1200,
+    800
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": null,
+   "source_of": "cover_02",
+   "status": "missing"
+  },
+  {
+   "id": "og_02",
+   "role": "og",
+   "path": "img/og_02.webp",
+   "size": [
+    1200,
+    630
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": null,
+   "source_of": "cover_02",
+   "status": "missing"
+  },
+  {
+   "id": "cover_03",
+   "role": "cover",
+   "page": "03_vector_store.html",
+   "path": "img/cover_03.webp",
+   "size": [
+    1600,
+    900
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": "see docs/COVER_PROMPTS_vector_db_lab.md#cover_03",
+   "source_of": null,
+   "status": "missing",
+   "alt_ko": "군집 서랍이 있는 선반 창고와 바닥의 빛나는 길 그래프"
+  },
+  {
+   "id": "thumb_03",
+   "role": "thumb",
+   "path": "img/thumb_03.webp",
+   "size": [
+    1200,
+    800
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": null,
+   "source_of": "cover_03",
+   "status": "missing"
+  },
+  {
+   "id": "og_03",
+   "role": "og",
+   "path": "img/og_03.webp",
+   "size": [
+    1200,
+    630
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": null,
+   "source_of": "cover_03",
+   "status": "missing"
+  },
+  {
+   "id": "cover_04",
+   "role": "cover",
+   "page": "04_llm_rag.html",
+   "path": "img/cover_04.webp",
+   "size": [
+    1600,
+    900
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": "see docs/COVER_PROMPTS_vector_db_lab.md#cover_04",
+   "source_of": null,
+   "status": "missing",
+   "alt_ko": "하루가 문서 조각을 말하는 책에 끼워 주고 초파리가 옛 문서를 빼내는 고객센터"
+  },
+  {
+   "id": "thumb_04",
+   "role": "thumb",
+   "path": "img/thumb_04.webp",
+   "size": [
+    1200,
+    800
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": null,
+   "source_of": "cover_04",
+   "status": "missing"
+  },
+  {
+   "id": "og_04",
+   "role": "og",
+   "path": "img/og_04.webp",
+   "size": [
+    1200,
+    630
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": null,
+   "source_of": "cover_04",
+   "status": "missing"
+  },
+  {
+   "id": "cover_05",
+   "role": "cover",
+   "page": "05_cases.html",
+   "path": "img/cover_05.webp",
+   "size": [
+    1600,
+    900
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": "see docs/COVER_PROMPTS_vector_db_lab.md#cover_05",
+   "source_of": null,
+   "status": "missing",
+   "alt_ko": "네 화면이 있는 상황실에서 식구들이 각 사례를 가리키는 장면"
+  },
+  {
+   "id": "thumb_05",
+   "role": "thumb",
+   "path": "img/thumb_05.webp",
+   "size": [
+    1200,
+    800
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": null,
+   "source_of": "cover_05",
+   "status": "missing"
+  },
+  {
+   "id": "og_05",
+   "role": "og",
+   "path": "img/og_05.webp",
+   "size": [
+    1200,
+    630
+   ],
+   "characters": [
+    "doc",
+    "asst",
+    "fly",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": null,
+   "source_of": "cover_05",
+   "status": "missing"
+  },
+  {
+   "id": "cover_06",
+   "role": "cover",
+   "page": "practice/index.html",
+   "path": "img/cover_06.webp",
+   "size": [
+    1600,
+    900
+   ],
+   "characters": [
+    "asst",
+    "sia",
+    "moa",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": "see docs/COVER_PROMPTS_vector_db_lab.md#cover_06",
+   "source_of": null,
+   "status": "missing",
+   "alt_ko": "인턴 둘이 조작판을 운영하고 하루가 뒤에서 미소 짓는 운영실"
+  },
+  {
+   "id": "thumb_06",
+   "role": "thumb",
+   "path": "img/thumb_06.webp",
+   "size": [
+    1200,
+    800
+   ],
+   "characters": [
+    "asst",
+    "sia",
+    "moa",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": null,
+   "source_of": "cover_06",
+   "status": "missing"
+  },
+  {
+   "id": "og_06",
+   "role": "og",
+   "path": "img/og_06.webp",
+   "size": [
+    1200,
+    630
+   ],
+   "characters": [
+    "asst",
+    "sia",
+    "moa",
+    "jupanbot"
+   ],
+   "robot": "jupanbot-v2",
+   "prompt_en": null,
+   "source_of": "cover_06",
+   "status": "missing"
+  }
+ ],
+ "updated": "2026-11-22"
+}

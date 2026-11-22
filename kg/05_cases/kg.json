@@ -1,0 +1,576 @@
+{
+ "version": "1.0",
+ "page": "05_cases",
+ "nodes": [
+  {
+   "id": "lab:method/content-recommend",
+   "type": "Method",
+   "label": {
+    "ko": "리뷰 좌표 평균으로 하는 콘텐츠 추천",
+    "en": "Content recommendation from review embeddings"
+   },
+   "page": "05_cases",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "좋아한 이유의 좌표가 닮은 작품"
+   },
+   "source": [
+    {
+     "ref": "spotify_annoy",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:limitation/cold-start",
+   "type": "Limitation",
+   "label": {
+    "ko": "콜드 스타트",
+    "en": "Cold start"
+   },
+   "page": "05_cases",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:method/spam-novelty",
+   "type": "Method",
+   "label": {
+    "ko": "광고 걸러내기와 새 이야기 알림",
+    "en": "Spam filtering and novelty alert"
+   },
+   "page": "05_cases",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "닮음으로 거르고 다름으로 알림"
+   }
+  },
+  {
+   "id": "lab:claim/spam-f1",
+   "type": "Claim",
+   "label": {
+    "ko": "둘째 주 광고 걸러내기 F1: 글자 겹침 0.818, 좌표 0.963",
+    "en": "Embedding spam filter F1"
+   },
+   "page": "05_cases",
+   "anchor": "#duel",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "ahn2026vdb",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:method/chat-memory",
+   "type": "Method",
+   "label": {
+    "ko": "대화 기억 창고 (장기 기억)",
+    "en": "Conversation memory store"
+   },
+   "page": "05_cases",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "지난 대화를 좌표로 저장, 가까운 기억만 꺼냄"
+   }
+  },
+  {
+   "id": "lab:limitation/embedding-privacy",
+   "type": "Limitation",
+   "label": {
+    "ko": "좌표에서 원문이 되살아날 수 있음 — 좌표도 원문처럼 보호",
+    "en": "Embedding inversion risk"
+   },
+   "page": "05_cases",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "morris2023inversion",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:method/adoption-check",
+   "type": "Method",
+   "label": {
+    "ko": "벡터 DB 도입 판단 다섯 질문",
+    "en": "Adoption checklist"
+   },
+   "page": "05_cases",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "definition": {
+    "ko": "질문 종류·데이터·규모·갱신·보안"
+   }
+  },
+  {
+   "id": "lab:concept/multimodal-embedding",
+   "type": "Concept",
+   "label": {
+    "ko": "글과 그림을 같은 좌표에 (CLIP)",
+    "en": "Multimodal embedding"
+   },
+   "page": "05_cases",
+   "anchor": "#sum",
+   "level": 3,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ],
+   "source": [
+    {
+     "ref": "radford2021clip",
+     "loc": ""
+    }
+   ]
+  },
+  {
+   "id": "lab:sim/v5-sns",
+   "type": "Simulation",
+   "label": {
+    "ko": "SNS 상황실",
+    "en": "SNS monitoring lab"
+   },
+   "page": "05_cases",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": [],
+   "domain": [
+    "ai"
+   ]
+  },
+  {
+   "id": "lab:work/ahn2026vdb",
+   "type": "Work",
+   "label": {
+    "ko": "안 (2026) (주)M-Robo",
+    "en": "벡터 DB 연구실 가상 데이터 (영화 리뷰·SNS 글·랩플릭스 안내 문서·교육용 임베딩)"
+   },
+   "page": "05_cases",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/spotify_annoy",
+   "type": "Work",
+   "label": {
+    "ko": "Spotify (n.d.) GitHub",
+    "en": "Annoy: Approximate Nearest Neighbors Oh Yeah"
+   },
+   "page": "05_cases",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/radford2021clip",
+   "type": "Work",
+   "label": {
+    "ko": "Radford 외 (2021) ICML 2021",
+    "en": "Learning Transferable Visual Models From Natural Language Supervision"
+   },
+   "page": "05_cases",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/morris2023inversion",
+   "type": "Work",
+   "label": {
+    "ko": "Morris 외 (2023) EMNLP 2023",
+    "en": "Text Embeddings Reveal (Almost) As Much As Text"
+   },
+   "page": "05_cases",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:work/pgvector",
+   "type": "Work",
+   "label": {
+    "ko": "Kane (n.d.) GitHub",
+    "en": "pgvector: Open-source vector similarity search for Postgres"
+   },
+   "page": "05_cases",
+   "anchor": "#export",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-5-q51-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "영화 좌표를 \"별점 4점 이상 리뷰\"의 평균으로 만든 이유는?",
+    "en": "Quiz 5 q51-1"
+   },
+   "page": "05_cases",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-5-q51-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "별점 평균순 추천의 약점은?",
+    "en": "Quiz 5 q51-2"
+   },
+   "page": "05_cases",
+   "anchor": "#s1",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-5-q52-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "광고 걸러내기 문턱을 첫 주 글로 정하고 둘째 주로 채점한 이유는?",
+    "en": "Quiz 5 q52-1"
+   },
+   "page": "05_cases",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-5-q52-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "새 이야기 묶음이 빠르게 커질 때 맞는 대응은?",
+    "en": "Quiz 5 q52-2"
+   },
+   "page": "05_cases",
+   "anchor": "#s2",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-5-q53-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "챗봇에게 지난 대화를 전부 붙이지 않고 기억 창고를 쓰는 이유는?",
+    "en": "Quiz 5 q53-1"
+   },
+   "page": "05_cases",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-5-q53-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "이용자가 \"그 기억 지워 줘\"라고 하면?",
+    "en": "Quiz 5 q53-2"
+   },
+   "page": "05_cases",
+   "anchor": "#s3",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-5-q54-1",
+   "type": "QuizItem",
+   "label": {
+    "ko": "질문 대부분이 주문 조회·재고·정산이라면?",
+    "en": "Quiz 5 q54-1"
+   },
+   "page": "05_cases",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  },
+  {
+   "id": "lab:quiz/vdb-5-q54-2",
+   "type": "QuizItem",
+   "label": {
+    "ko": "개인정보가 든 문장을 외부 임베딩 API로 보낼 때의 위험은?",
+    "en": "Quiz 5 q54-2"
+   },
+   "page": "05_cases",
+   "anchor": "#s4",
+   "level": 2,
+   "status": "known",
+   "confidence": "high",
+   "coverage": "explained",
+   "match": []
+  }
+ ],
+ "edges": [
+  {
+   "s": "lab:method/content-recommend",
+   "p": "lab:broader",
+   "o": "lab:topic/embedding-space",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/cold-start",
+   "p": "lab:broader",
+   "o": "lab:topic/embedding-space",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/spam-novelty",
+   "p": "lab:broader",
+   "o": "lab:topic/anomaly-detection",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/chat-memory",
+   "p": "lab:broader",
+   "o": "lab:topic/rag",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/embedding-privacy",
+   "p": "lab:broader",
+   "o": "lab:topic/privacy",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/adoption-check",
+   "p": "lab:broader",
+   "o": "lab:topic/deployment",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/multimodal-embedding",
+   "p": "lab:broader",
+   "o": "lab:topic/contrastive",
+   "anchor": "#sum",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/content-recommend",
+   "p": "lab:hasLimitation",
+   "o": "lab:limitation/cold-start",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/spam-f1",
+   "p": "lab:supports",
+   "o": "lab:method/spam-novelty",
+   "anchor": "#duel",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/chat-memory",
+   "p": "lab:hasLimitation",
+   "o": "lab:limitation/embedding-privacy",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/adoption-check",
+   "p": "lab:raises",
+   "o": "lab:limitation/embedding-privacy",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:sim/v5-sns",
+   "p": "lab:demonstratedBy",
+   "o": "lab:method/spam-novelty",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/content-recommend",
+   "p": "lab:assertedIn",
+   "o": "lab:work/spotify_annoy",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:claim/spam-f1",
+   "p": "lab:assertedIn",
+   "o": "lab:work/ahn2026vdb",
+   "anchor": "#duel",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:limitation/embedding-privacy",
+   "p": "lab:assertedIn",
+   "o": "lab:work/morris2023inversion",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:concept/multimodal-embedding",
+   "p": "lab:assertedIn",
+   "o": "lab:work/radford2021clip",
+   "anchor": "#sum",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:method/content-recommend",
+   "p": "lab:explainedIn",
+   "o": "lab:work/pgvector",
+   "anchor": "#export",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-5-q51-1",
+   "p": "lab:assesses",
+   "o": "lab:method/content-recommend",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-5-q51-2",
+   "p": "lab:assesses",
+   "o": "lab:method/content-recommend",
+   "anchor": "#s1",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-5-q52-1",
+   "p": "lab:assesses",
+   "o": "lab:method/spam-novelty",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-5-q52-2",
+   "p": "lab:assesses",
+   "o": "lab:method/spam-novelty",
+   "anchor": "#s2",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-5-q53-1",
+   "p": "lab:assesses",
+   "o": "lab:method/chat-memory",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-5-q53-2",
+   "p": "lab:assesses",
+   "o": "lab:method/chat-memory",
+   "anchor": "#s3",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-5-q54-1",
+   "p": "lab:assesses",
+   "o": "lab:method/adoption-check",
+   "anchor": "#s4",
+   "confidence": "high"
+  },
+  {
+   "s": "lab:quiz/vdb-5-q54-2",
+   "p": "lab:assesses",
+   "o": "lab:method/adoption-check",
+   "anchor": "#s4",
+   "confidence": "high"
+  }
+ ]
+}

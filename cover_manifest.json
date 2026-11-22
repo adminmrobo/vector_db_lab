@@ -120,7 +120,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": null,
    "source_of": "cover_00",
-   "status": "missing"
+   "status": "ok"
   },
   {
    "id": "og_00",
@@ -141,7 +141,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": null,
    "source_of": "cover_00",
-   "status": "missing"
+   "status": "ok"
   },
   {
    "id": "cover_01",
@@ -181,7 +181,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": null,
    "source_of": "cover_01",
-   "status": "missing"
+   "status": "ok"
   },
   {
    "id": "og_01",
@@ -200,7 +200,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": null,
    "source_of": "cover_01",
-   "status": "missing"
+   "status": "ok"
   },
   {
    "id": "cover_02",
@@ -240,7 +240,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": null,
    "source_of": "cover_02",
-   "status": "missing"
+   "status": "ok"
   },
   {
    "id": "og_02",
@@ -259,7 +259,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": null,
    "source_of": "cover_02",
-   "status": "missing"
+   "status": "ok"
   },
   {
    "id": "cover_03",
@@ -299,7 +299,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": null,
    "source_of": "cover_03",
-   "status": "missing"
+   "status": "ok"
   },
   {
    "id": "og_03",
@@ -318,7 +318,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": null,
    "source_of": "cover_03",
-   "status": "missing"
+   "status": "ok"
   },
   {
    "id": "cover_04",
@@ -358,7 +358,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": null,
    "source_of": "cover_04",
-   "status": "missing"
+   "status": "ok"
   },
   {
    "id": "og_04",
@@ -377,7 +377,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": null,
    "source_of": "cover_04",
-   "status": "missing"
+   "status": "ok"
   },
   {
    "id": "cover_05",
@@ -417,7 +417,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": null,
    "source_of": "cover_05",
-   "status": "missing"
+   "status": "ok"
   },
   {
    "id": "og_05",
@@ -436,7 +436,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": null,
    "source_of": "cover_05",
-   "status": "missing"
+   "status": "ok"
   },
   {
    "id": "cover_07",
@@ -476,7 +476,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": null,
    "source_of": "cover_07",
-   "status": "missing"
+   "status": "ok"
   },
   {
    "id": "og_07",
@@ -495,7 +495,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": null,
    "source_of": "cover_07",
-   "status": "missing"
+   "status": "ok"
   },
   {
    "id": "cover_08",
@@ -535,7 +535,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": null,
    "source_of": "cover_08",
-   "status": "missing"
+   "status": "ok"
   },
   {
    "id": "og_08",
@@ -554,7 +554,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": null,
    "source_of": "cover_08",
-   "status": "missing"
+   "status": "ok"
   },
   {
    "id": "cover_06",
@@ -594,7 +594,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": null,
    "source_of": "cover_06",
-   "status": "missing"
+   "status": "ok"
   },
   {
    "id": "og_06",
@@ -613,7 +613,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": null,
    "source_of": "cover_06",
-   "status": "missing"
+   "status": "ok"
   }
  ],
  "updated": "2026-11-22"

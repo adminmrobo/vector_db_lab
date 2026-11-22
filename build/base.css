@@ -33,7 +33,8 @@ nav.top a:hover{background:var(--panel2);color:var(--text)}
 /* 표지 */
 .cover{position:relative;width:100%;aspect-ratio:16/9;max-height:72vh;overflow:hidden;background:linear-gradient(160deg,#f4f7fb,#e8eef6);border-bottom:1px solid var(--rule)}
 .cover.band{aspect-ratio:auto;height:180px}
-.cover img.cimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.cover img.cimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;image-rendering:pixelated;image-rendering:crisp-edges}
+@supports (image-rendering:pixelated){.cover img.cimg{image-rendering:pixelated}}
 .cover .fallback{position:absolute;inset:0;width:100%;height:100%}
 .cover .ctitle{position:absolute;left:4%;bottom:7%;z-index:2;max-width:78%;background:rgba(255,255,255,.88);border:1px solid var(--rule);border-radius:14px;padding:10px 16px}
 .cover .ctitle b{display:block;font-size:clamp(11px,1.5vw,15px);color:var(--amber);letter-spacing:.04em}

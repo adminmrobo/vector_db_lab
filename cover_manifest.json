@@ -98,7 +98,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": "see docs/COVER_PROMPTS_vector_db_lab.md#cover_00",
    "source_of": null,
-   "status": "missing",
+   "status": "ok",
    "alt_ko": "조수(하루)가 칠판 앞에서 첫 강의를 하고 인턴 둘과 식구들이 지켜보는 장면"
   },
   {
@@ -161,7 +161,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": "see docs/COVER_PROMPTS_vector_db_lab.md#cover_01",
    "source_of": null,
-   "status": "missing",
+   "status": "ok",
    "alt_ko": "별점 카드는 서랍장에 잘 들어가고, 말풍선 종이는 넘쳐 흐르는 자료실"
   },
   {
@@ -220,7 +220,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": "see docs/COVER_PROMPTS_vector_db_lab.md#cover_02",
    "source_of": null,
-   "status": "missing",
+   "status": "ok",
    "alt_ko": "말풍선이 모눈 위 좌표 점으로 내려앉고 각도기로 화살표 각도를 재는 장면"
   },
   {
@@ -279,7 +279,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": "see docs/COVER_PROMPTS_vector_db_lab.md#cover_03",
    "source_of": null,
-   "status": "missing",
+   "status": "ok",
    "alt_ko": "군집 서랍이 있는 선반 창고와 바닥의 빛나는 길 그래프"
   },
   {
@@ -338,7 +338,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": "see docs/COVER_PROMPTS_vector_db_lab.md#cover_04",
    "source_of": null,
-   "status": "missing",
+   "status": "ok",
    "alt_ko": "하루가 문서 조각을 말하는 책에 끼워 주고 초파리가 옛 문서를 빼내는 고객센터"
   },
   {
@@ -397,7 +397,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": "see docs/COVER_PROMPTS_vector_db_lab.md#cover_05",
    "source_of": null,
-   "status": "missing",
+   "status": "ok",
    "alt_ko": "네 화면이 있는 상황실에서 식구들이 각 사례를 가리키는 장면"
   },
   {
@@ -456,7 +456,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": "see docs/COVER_PROMPTS_vector_db_lab.md#cover_07",
    "source_of": null,
-   "status": "missing",
+   "status": "ok",
    "alt_ko": "문서 조각이 빛나는 띠로 이어지고 3층 판의 점들이 빨간 실로 이어진 어텐션 탑을 식구들이 올려다보는 장면"
   },
   {
@@ -515,7 +515,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": "see docs/COVER_PROMPTS_vector_db_lab.md#cover_08",
    "source_of": null,
-   "status": "missing",
+   "status": "ok",
    "alt_ko": "구슬 그물 모형에서 초록 실이 길을 따라가고 바닥에 개념 나무 선반이 있는 연구실"
   },
   {
@@ -574,7 +574,7 @@
    "robot": "jupanbot-v2",
    "prompt_en": "see docs/COVER_PROMPTS_vector_db_lab.md#cover_06",
    "source_of": null,
-   "status": "missing",
+   "status": "ok",
    "alt_ko": "인턴 둘이 조작판을 운영하고 하루가 뒤에서 미소 짓는 운영실"
   },
   {

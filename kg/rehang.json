@@ -1,0 +1,286 @@
+{
+ "version": "1.0",
+ "made": "2026-11-24",
+ "via": "rehang-2026-11-24",
+ "domains": [
+  "data",
+  "llm",
+  "math"
+ ],
+ "note": "분야 뼈대 주제에 다시 걸기(ai-lab-retrofit 15장). links는 자동 후보이며 틀린 줄은 지우면 된다. 빌드 스크립트가 있는 저장소는 빌드 끝에 rehang.apply_overlay()가 이 파일을 적용한다.",
+ "topics": {
+  "lab:topic/chunking-indexing": {
+   "ko": "청크 나누기와 색인",
+   "en": "Chunking and indexing",
+   "domain": [
+    "llm"
+   ],
+   "level": 3
+  },
+  "lab:topic/clip-alignment": {
+   "ko": "이미지-텍스트 정렬(CLIP)",
+   "en": "Image–text alignment (CLIP)",
+   "domain": [
+    "genai"
+   ],
+   "level": 3
+  },
+  "lab:topic/data-types": {
+   "ko": "자료 종류",
+   "en": "Types of data",
+   "domain": [
+    "stats"
+   ],
+   "level": 1
+  },
+  "lab:topic/decoder-only": {
+   "ko": "디코더 전용 트랜스포머",
+   "en": "Decoder-only transformers",
+   "domain": [
+    "llm"
+   ],
+   "level": 2
+  },
+  "lab:topic/document-kv-stores": {
+   "ko": "문서·키-값 저장소",
+   "en": "Document and key–value stores",
+   "domain": [
+    "data"
+   ],
+   "level": 3
+  },
+  "lab:topic/embedding-space": {
+   "ko": "임베딩 공간",
+   "en": "Embedding space",
+   "domain": [
+    "ai",
+    "dl"
+   ],
+   "level": 3
+  },
+  "lab:topic/long-term-memory-llm": {
+   "ko": "장기 기억과 대화 압축",
+   "en": "Long-term memory and context compression",
+   "domain": [
+    "llm"
+   ],
+   "level": 3
+  },
+  "lab:topic/positional-encoding": {
+   "ko": "위치 인코딩",
+   "en": "Positional encoding",
+   "domain": [
+    "ai",
+    "dl",
+    "llm"
+   ],
+   "level": 4
+  },
+  "lab:topic/quantization": {
+   "ko": "양자화",
+   "en": "Quantization",
+   "domain": [
+    "llm"
+   ],
+   "level": 3
+  },
+  "lab:topic/rag": {
+   "ko": "검색 증강 생성",
+   "en": "Retrieval-augmented generation",
+   "domain": [
+    "ai",
+    "llm"
+   ],
+   "level": 4
+  },
+  "lab:topic/relational-model": {
+   "ko": "관계 모형",
+   "en": "Relational model",
+   "domain": [
+    "data"
+   ],
+   "level": 1
+  },
+  "lab:topic/sql": {
+   "ko": "SQL",
+   "en": "SQL",
+   "domain": [
+    "data"
+   ],
+   "level": 1
+  },
+  "lab:topic/text-vectorization": {
+   "ko": "텍스트 벡터화",
+   "en": "Text vectorization",
+   "domain": [
+    "data"
+   ],
+   "level": 1
+  },
+  "lab:topic/vector-database": {
+   "ko": "벡터 데이터베이스",
+   "en": "Vector databases",
+   "domain": [
+    "data"
+   ],
+   "level": 3
+  },
+  "lab:topic/vector-search": {
+   "ko": "벡터 검색",
+   "en": "Vector search",
+   "domain": [
+    "llm"
+   ],
+   "level": 3
+  }
+ },
+ "links": {
+  "lab:concept/ann": {
+   "topic": "lab:topic/vector-search",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "근사 최근접 이웃 검색 (ANN)"
+  },
+  "lab:concept/embedding": {
+   "topic": "lab:topic/embedding-space",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "임베딩 (뜻의 좌표)"
+  },
+  "lab:concept/hybrid-storage": {
+   "topic": "lab:topic/vector-database",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "관계형 DB와 벡터 DB의 역할 나누기 (pgvector)"
+  },
+  "lab:concept/llm": {
+   "topic": "lab:topic/decoder-only",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "대형 언어 모델 (다음 말 잇기)"
+  },
+  "lab:concept/multimodal-embedding": {
+   "topic": "lab:topic/clip-alignment",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "글과 그림을 같은 좌표에 (CLIP)"
+  },
+  "lab:concept/relational-database": {
+   "topic": "lab:topic/relational-model",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "관계형 데이터베이스"
+  },
+  "lab:concept/sentence-embedding": {
+   "topic": "lab:topic/text-vectorization",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "문장 임베딩"
+  },
+  "lab:concept/structured-data": {
+   "topic": "lab:topic/data-types",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "정형 데이터"
+  },
+  "lab:concept/token-position": {
+   "topic": "lab:topic/positional-encoding",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "토큰 임베딩과 위치 정보"
+  },
+  "lab:concept/unstructured-data": {
+   "topic": "lab:topic/document-kv-stores",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "비정형 데이터"
+  },
+  "lab:concept/vector-database": {
+   "topic": "lab:topic/vector-database",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "벡터 데이터베이스"
+  },
+  "lab:method/bag-of-words": {
+   "topic": "lab:topic/text-vectorization",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "낱말 세기 (BoW)"
+  },
+  "lab:method/bm25": {
+   "topic": "lab:topic/vector-search",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "BM25 (글자 점수)"
+  },
+  "lab:method/chat-memory": {
+   "topic": "lab:topic/long-term-memory-llm",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "대화 기억 창고 (장기 기억)"
+  },
+  "lab:method/chunking": {
+   "topic": "lab:topic/chunking-indexing",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "청킹 (조각 크기·겹침)"
+  },
+  "lab:method/hnsw": {
+   "topic": "lab:topic/chunking-indexing",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "그래프 색인 (HNSW)"
+  },
+  "lab:method/hybrid-search": {
+   "topic": "lab:topic/vector-search",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "하이브리드 검색 (α × 뜻 + (1−α) × 글자)"
+  },
+  "lab:method/ivf": {
+   "topic": "lab:topic/chunking-indexing",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "서랍 색인 (IVF)"
+  },
+  "lab:method/metadata-filter": {
+   "topic": "lab:topic/vector-search",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "메타데이터 필터 (먼저/나중 거르기)"
+  },
+  "lab:method/quantization": {
+   "topic": "lab:topic/quantization",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "양자화 (PQ)"
+  },
+  "lab:method/rag": {
+   "topic": "lab:topic/rag",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "검색 증강 생성 (RAG)"
+  },
+  "lab:method/semantic-search": {
+   "topic": "lab:topic/vector-search",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "의미 검색 (벡터 검색)"
+  },
+  "lab:method/sql-like": {
+   "topic": "lab:topic/sql",
+   "score": 3,
+   "why": "사람이 고름",
+   "ko": "SQL LIKE 검색"
+  }
+ },
+ "retag": {
+  "from": [
+   "ai"
+  ],
+  "to": [
+   "data",
+   "llm"
+  ]
+ }
+}
